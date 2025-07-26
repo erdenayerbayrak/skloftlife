@@ -1,26 +1,227 @@
-@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
+@layer base {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    /* Luxury Villa Light Mode - Based on Natural Stone, Wood & Bronze */
+    --background: 35 20% 96%; /* Warm cream background inspired by villa interiors */
+    --foreground: 20 15% 15%; /* Deep charcoal text */
+    --card: 35 15% 93%; /* Light beige card backgrounds */
+    --card-foreground: 20 15% 15%;
+    --popover: 35 15% 93%;
+    --popover-foreground: 20 15% 15%;
+    --primary: 43 74% 49%; /* Elegant bronze/gold accent */
+    --primary-foreground: 0 0% 100%;
+    --secondary: 30 12% 88%; /* Stone-like neutral */
+    --secondary-foreground: 20 15% 15%;
+    --muted: 30 12% 88%;
+    --muted-foreground: 20 8% 45%;
+    --accent: 25 50% 45%; /* Warm copper accent */
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 30 10% 85%;
+    --input: 30 10% 85%;
+    --ring: 43 74% 49%;
+    --radius: 0.75rem;
+    
+    /* Shadows */
+    --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  }
+
+  .dark {
+    /* Luxury Villa Dark Mode - Rich Earth Tones */
+    --background: 20 15% 8%; /* Deep charcoal inspired by dark stone */
+    --foreground: 35 20% 95%; /* Warm cream text */
+    --card: 20 12% 12%; /* Dark stone card backgrounds */
+    --card-foreground: 35 20% 95%;
+    --popover: 20 12% 12%;
+    --popover-foreground: 35 20% 95%;
+    --primary: 43 74% 55%; /* Brighter bronze for dark mode */
+    --primary-foreground: 20 15% 8%;
+    --secondary: 20 8% 18%; /* Darker stone neutral */
+    --secondary-foreground: 35 20% 95%;
+    --muted: 20 8% 18%;
+    --muted-foreground: 30 10% 65%;
+    --accent: 25 50% 55%; /* Brighter copper for dark mode */
+    --accent-foreground: 20 15% 8%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 35 20% 95%;
+    --border: 20 8% 20%;
+    --input: 20 8% 20%;
+    --ring: 43 74% 55%;
+    
+    /* Dark Mode Shadows */
+    --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.2);
+    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.3), 0 2px 4px -1px rgba(0, 0, 0, 0.2);
+    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.3), 0 4px 6px -2px rgba(0, 0, 0, 0.2);
+    --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.3), 0 10px 10px -5px rgba(0, 0, 0, 0.2);
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@layer base {
+  * {
+    @apply border-border;
+  }
+  
+  body {
+    @apply bg-background text-foreground;
+    font-family: var(--font-oxanium), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-oxanium), sans-serif;
+    @apply font-semibold tracking-wide;
+  }
+  
+  p, .body-text {
+    font-family: var(--font-merriweather), serif;
+    @apply leading-relaxed;
+  }
+  
+  /* Smooth transitions for theme changes */
+  * {
+    @apply transition-colors duration-300;
+  }
+}
+
+@layer components {
+  .container {
+    @apply mx-auto px-6 sm:px-8 lg:px-12 max-w-[1400px];
+  }
+  
+  .btn-primary {
+    @apply bg-primary text-primary-foreground px-8 py-4 rounded-xl font-medium hover:bg-primary/90 transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl;
+  }
+  
+  .btn-secondary {
+    @apply bg-secondary text-secondary-foreground px-8 py-4 rounded-xl font-medium hover:bg-secondary/90 transform hover:scale-105 transition-all duration-300 shadow-md hover:shadow-lg;
+  }
+  
+  .glass-morphism {
+    @apply backdrop-blur-xl bg-background/60 border border-border/50 shadow-xl;
+  }
+  
+  .luxury-gradient {
+    background: linear-gradient(135deg, 
+      hsl(var(--primary) / 0.1) 0%, 
+      hsl(var(--accent) / 0.05) 50%, 
+      hsl(var(--primary) / 0.05) 100%);
+  }
+  
+  .bohemian-pattern {
+    background-image: 
+      radial-gradient(circle at 25% 25%, hsl(var(--primary) / 0.03) 0%, transparent 50%),
+      radial-gradient(circle at 75% 75%, hsl(var(--accent) / 0.03) 0%, transparent 50%),
+      radial-gradient(circle at 50% 50%, hsl(var(--primary) / 0.02) 0%, transparent 70%);
+    background-size: 400px 400px, 600px 600px, 800px 800px;
+    background-position: 0 0, 100px 100px, -100px -100px;
+  }
+}
+
+@layer utilities {
+  /* Sophisticated Animations */
+  @keyframes luxury-fade-in {
+    from {
+      opacity: 0;
+      transform: translateY(30px) scale(0.95);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+  }
+  
+  @keyframes elegant-slide-up {
+    from {
+      opacity: 0;
+      transform: translateY(50px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  @keyframes float {
+    0%, 100% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(-20px);
+    }
+  }
+  
+  @keyframes shimmer {
+    0% {
+      background-position: -1000px 0;
+    }
+    100% {
+      background-position: 1000px 0;
+    }
+  }
+  
+  .animate-luxury-fade-in {
+    animation: luxury-fade-in 1.2s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+  }
+  
+  .animate-elegant-slide-up {
+    animation: elegant-slide-up 1s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+  }
+  
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+  
+  .shimmer-effect {
+    background: linear-gradient(
+      105deg,
+      transparent 40%,
+      hsl(var(--primary) / 0.1) 50%,
+      transparent 60%
+    );
+    background-size: 1000px 100%;
+    animation: shimmer 2s infinite;
+  }
+  
+  /* Luxury Hover Effects */
+  .luxury-hover {
+    @apply transition-all duration-500 ease-out;
+  }
+  
+  .luxury-hover:hover {
+    @apply transform scale-105 shadow-2xl;
+  }
+  
+  /* Premium Text Shadows */
+  .text-shadow-luxury {
+    text-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+  }
+  
+  .text-shadow-luxury-dark {
+    text-shadow: 0 2px 30px rgba(255, 255, 255, 0.1);
+  }
+  
+  /* Animation Delays */
+  .animation-delay-300 {
+    animation-delay: 300ms;
+  }
+  
+  .animation-delay-600 {
+    animation-delay: 600ms;
+  }
+  
+  .animation-delay-900 {
+    animation-delay: 900ms;
+  }
+  
+  .animation-delay-1200 {
+    animation-delay: 1200ms;
+  }
 }

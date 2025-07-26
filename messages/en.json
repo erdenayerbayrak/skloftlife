@@ -1,0 +1,70 @@
+{
+  "metadata": {
+    "title": "SkLoftLife Villas – Luxury Living",
+    "description": "Experience premium villa living with modern architecture and stunning views"
+  },
+  "navigation": {
+    "home": "Home",
+    "about": "About",
+    "villas": "Villa Plans",
+    "gallery": "Gallery",
+    "live": "Live Camera",
+    "contact": "Contact"
+  },
+  "hero": {
+    "title": "SkLoftLife Villas",
+    "subtitle": "Luxury Living Redefined",
+    "cta": "Discover More"
+  },
+  "about": {
+    "title": "About the Project",
+    "description": "SkLoftLife Villas combines modern architecture with natural beauty to create an exceptional living experience.",
+    "features": {
+      "title": "Key Features",
+      "modern": "Modern Architecture",
+      "sustainable": "Sustainable Design",
+      "premium": "Premium Materials",
+      "location": "Prime Location"
+    }
+  },
+  "villas": {
+    "title": "Villa Plans",
+    "downloadPdf": "Download PDF",
+    "specs": {
+      "size": "Size",
+      "bedrooms": "Bedrooms",
+      "bathrooms": "Bathrooms",
+      "price": "Starting from"
+    }
+  },
+  "gallery": {
+    "title": "Gallery",
+    "loading": "Loading images..."
+  },
+  "live": {
+    "title": "Live Camera",
+    "description": "Watch the construction progress in real-time"
+  },
+  "contact": {
+    "title": "Contact Us",
+    "form": {
+      "name": "Your Name",
+      "email": "Email Address",
+      "phone": "Phone Number",
+      "message": "Message",
+      "submit": "Send Message",
+      "success": "Thank you! We'll get back to you soon.",
+      "error": "Something went wrong. Please try again."
+    },
+    "info": {
+      "phone": "+90 555 123 4567",
+      "email": "info@skloftlife.com",
+      "address": "Antalya, Turkey"
+    }
+  },
+  "footer": {
+    "rights": "All rights reserved",
+    "privacy": "Privacy Policy",
+    "terms": "Terms of Service"
+  }
+}

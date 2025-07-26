@@ -1,0 +1,70 @@
+{
+  "metadata": {
+    "title": "SkLoftLife Villaları – Lüks Yaşam",
+    "description": "Modern mimari ve muhteşem manzaralarla premium villa yaşamını deneyimleyin"
+  },
+  "navigation": {
+    "home": "Ana Sayfa",
+    "about": "Hakkında",
+    "villas": "Villa Planları",
+    "gallery": "Galeri",
+    "live": "Canlı Kamera",
+    "contact": "İletişim"
+  },
+  "hero": {
+    "title": "SkLoftLife Villaları",
+    "subtitle": "Lüks Yaşamın Yeni Tanımı",
+    "cta": "Keşfet"
+  },
+  "about": {
+    "title": "Proje Hakkında",
+    "description": "SkLoftLife Villaları, modern mimariyi doğal güzellikle birleştirerek olağanüstü bir yaşam deneyimi sunuyor.",
+    "features": {
+      "title": "Öne Çıkan Özellikler",
+      "modern": "Modern Mimari",
+      "sustainable": "Sürdürülebilir Tasarım",
+      "premium": "Premium Malzemeler",
+      "location": "Ayrıcalıklı Konum"
+    }
+  },
+  "villas": {
+    "title": "Villa Planları",
+    "downloadPdf": "PDF İndir",
+    "specs": {
+      "size": "Büyüklük",
+      "bedrooms": "Yatak Odası",
+      "bathrooms": "Banyo",
+      "price": "Başlangıç fiyatı"
+    }
+  },
+  "gallery": {
+    "title": "Galeri",
+    "loading": "Görüntüler yükleniyor..."
+  },
+  "live": {
+    "title": "Canlı Kamera",
+    "description": "İnşaat ilerlemesini gerçek zamanlı izleyin"
+  },
+  "contact": {
+    "title": "İletişim",
+    "form": {
+      "name": "Adınız",
+      "email": "E-posta Adresi",
+      "phone": "Telefon Numarası",
+      "message": "Mesajınız",
+      "submit": "Mesaj Gönder",
+      "success": "Teşekkürler! En kısa sürede size dönüş yapacağız.",
+      "error": "Bir hata oluştu. Lütfen tekrar deneyin."
+    },
+    "info": {
+      "phone": "+90 555 123 4567",
+      "email": "info@skloftlife.com",
+      "address": "Antalya, Türkiye"
+    }
+  },
+  "footer": {
+    "rights": "Tüm hakları saklıdır",
+    "privacy": "Gizlilik Politikası",
+    "terms": "Kullanım Koşulları"
+  }
+}
