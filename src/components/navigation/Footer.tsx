@@ -6,7 +6,7 @@ import { Link } from '@/navigation';
 const navigation = [
   { name: 'home', href: '/' },
   { name: 'about', href: '/about' },
-  { name: 'villas', href: '/villas' },
+  { name: 'plans', href: '/plans' },
   { name: 'gallery', href: '/gallery' },
   { name: 'live', href: '/live' },
   { name: 'contact', href: '/contact' },
@@ -56,152 +56,105 @@ export function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="relative mt-32">
+    <footer className="relative mt-16">
       {/* Decorative gradient divider */}
-      <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-primary/50 to-transparent" />
+      <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-primary/30 to-transparent" />
       
-      <div className="glass-morphism">
-        <div className="container py-16">
-          <div className="grid grid-cols-1 lg:grid-cols-4 gap-12 lg:gap-16">
-            {/* Company Info */}
-            <div className="lg:col-span-2 space-y-8">
-              <div>
-                <Link href="/" className="inline-block group">
-                  <div className="text-4xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
-                    SkLoftLife
-                  </div>
-                  <div className="w-0 h-0.5 bg-gradient-to-r from-primary to-accent group-hover:w-full transition-all duration-500 mt-2" />
-                </Link>
-              </div>
-              <p className="text-lg text-muted-foreground leading-relaxed max-w-md">
-                Where luxury meets architectural excellence. Creating extraordinary living spaces that redefine modern lifestyle through innovative design and premium craftsmanship.
-              </p>
-              
-              {/* Social Media */}
-              <div className="space-y-4">
-                <h4 className="text-lg font-semibold">Follow Our Journey</h4>
-                <div className="flex space-x-4">
-                  {socialLinks.map((social) => (
-                    <a
-                      key={social.name}
-                      href={social.href}
-                      className="group relative p-3 rounded-full bg-card hover:bg-primary transition-all duration-300 shadow-md hover:shadow-lg"
-                      aria-label={social.name}
-                    >
-                      <div className="text-muted-foreground group-hover:text-primary-foreground transition-colors duration-300">
-                        {social.icon}
-                      </div>
-                    </a>
-                  ))}
+      <div className="bg-card/30 backdrop-blur-sm border-t border-border/20">
+        <div className="container py-8">
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+            {/* Company Info - Logo & Slogan */}
+            <div className="space-y-3">
+              <Link href="/" className="inline-block group">
+                <div className="text-2xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
+                  SkLoftLife
                 </div>
-              </div>
+              </Link>
+              <p className="text-sm text-muted-foreground leading-relaxed">
+                Luxury villa construction and architectural excellence.
+              </p>
             </div>
 
             {/* Quick Links */}
-            <div className="space-y-6">
-              <h4 className="text-xl font-semibold">Explore</h4>
-              <nav className="space-y-3">
-                {navigation.map((item) => (
+            <div className="space-y-3">
+              <h4 className="text-sm font-semibold text-foreground">Quick Links</h4>
+              <nav className="space-y-2">
+                {navigation.slice(0, 3).map((item) => (
                   <Link
                     key={item.name}
                     href={item.href}
-                    className="block text-muted-foreground hover:text-primary transition-all duration-300 capitalize group"
+                    className="block text-sm text-muted-foreground hover:text-primary transition-colors duration-200"
                   >
-                    <span className="relative">
-                      {t(`navigation.${item.name}`)}
-                      <span className="absolute bottom-0 left-0 w-0 h-px bg-primary group-hover:w-full transition-all duration-300" />
-                    </span>
+                    {t(`navigation.${item.name}`)}
                   </Link>
                 ))}
               </nav>
             </div>
 
-            {/* Contact Info */}
-            <div className="space-y-6">
-              <h4 className="text-xl font-semibold">Get In Touch</h4>
-              <div className="space-y-4">
-                <div className="flex items-start gap-3 group">
-                  <div className="p-2 bg-primary/10 rounded-lg group-hover:bg-primary/20 transition-colors duration-300">
-                    <svg className="w-5 h-5 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
-                    </svg>
-                  </div>
-                  <div>
-                    <p className="font-medium">Phone</p>
-                    <p className="text-muted-foreground">{t('contact.info.phone')}</p>
-                  </div>
-                </div>
+            {/* More Links */}
+            <div className="space-y-3">
+              <h4 className="text-sm font-semibold text-foreground">Explore</h4>
+              <nav className="space-y-2">
+                {navigation.slice(3).map((item) => (
+                  <Link
+                    key={item.name}
+                    href={item.href}
+                    className="block text-sm text-muted-foreground hover:text-primary transition-colors duration-200"
+                  >
+                    {t(`navigation.${item.name}`)}
+                  </Link>
+                ))}
+              </nav>
+            </div>
 
-                <div className="flex items-start gap-3 group">
-                  <div className="p-2 bg-primary/10 rounded-lg group-hover:bg-primary/20 transition-colors duration-300">
-                    <svg className="w-5 h-5 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                    </svg>
-                  </div>
-                  <div>
-                    <p className="font-medium">Email</p>
-                    <p className="text-muted-foreground">{t('contact.info.email')}</p>
-                  </div>
-                </div>
-
-                <div className="flex items-start gap-3 group">
-                  <div className="p-2 bg-primary/10 rounded-lg group-hover:bg-primary/20 transition-colors duration-300">
-                    <svg className="w-5 h-5 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-                    </svg>
-                  </div>
-                  <div>
-                    <p className="font-medium">Location</p>
-                    <p className="text-muted-foreground">{t('contact.info.address')}</p>
-                  </div>
-                </div>
+            {/* Contact & Social */}
+            <div className="space-y-3">
+              <h4 className="text-sm font-semibold text-foreground">Contact</h4>
+              <div className="space-y-2">
+                <a href={`tel:${t('contact.info.phone')}`} className="block text-sm text-muted-foreground hover:text-primary transition-colors duration-200">
+                  {t('contact.info.phone')}
+                </a>
+                <a href={`mailto:${t('contact.info.email')}`} className="block text-sm text-muted-foreground hover:text-primary transition-colors duration-200">
+                  {t('contact.info.email')}
+                </a>
+              </div>
+              
+              {/* Social Media - Compact */}
+              <div className="flex space-x-2 pt-2">
+                {socialLinks.map((social) => (
+                  <a
+                    key={social.name}
+                    href={social.href}
+                    className="w-8 h-8 rounded-full bg-muted/50 hover:bg-primary transition-colors duration-200 flex items-center justify-center group"
+                    aria-label={social.name}
+                  >
+                    <div className="w-4 h-4 text-muted-foreground group-hover:text-primary-foreground transition-colors duration-200">
+                      {social.icon}
+                    </div>
+                  </a>
+                ))}
               </div>
             </div>
           </div>
 
-          {/* Newsletter */}
-          <div className="mt-16 pt-12 border-t border-border/50">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
-              <div>
-                <h3 className="text-2xl font-semibold mb-3">Stay Updated</h3>
-                <p className="text-muted-foreground">
-                  Subscribe to our newsletter for the latest updates on new projects and exclusive offers.
-                </p>
-              </div>
-              <div className="flex gap-4">
-                <input
-                  type="email"
-                  placeholder="Enter your email"
-                  className="flex-1 px-4 py-3 rounded-xl bg-card border border-border focus:outline-none focus:ring-2 focus:ring-primary/50 transition-all"
-                />
-                <button className="btn-primary whitespace-nowrap">
-                  Subscribe
-                </button>
-              </div>
-            </div>
-          </div>
-
-          {/* Bottom Bar */}
-          <div className="mt-12 pt-8 border-t border-border/50">
-            <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-              <p className="text-muted-foreground text-center md:text-left">
-                &copy; {currentYear} SkLoftLife Villas. {t('footer.rights')}
-              </p>
-              <div className="flex items-center space-x-6">
-                <Link 
-                  href="/privacy" 
-                  className="text-muted-foreground hover:text-primary transition-colors duration-300"
-                >
-                  {t('footer.privacy')}
-                </Link>
-                <Link 
-                  href="/terms" 
-                  className="text-muted-foreground hover:text-primary transition-colors duration-300"
-                >
-                  {t('footer.terms')}
-                </Link>
-              </div>
+          {/* Bottom Bar - Compact */}
+          <div className="mt-6 pt-4 border-t border-border/30 flex flex-col sm:flex-row justify-between items-center gap-2">
+            <p className="text-xs text-muted-foreground">
+              &copy; {currentYear} SkLoftLife Villas. {t('footer.rights')}
+            </p>
+            <div className="flex items-center space-x-4">
+              <Link 
+                href="/privacy" 
+                className="text-xs text-muted-foreground hover:text-primary transition-colors duration-200"
+              >
+                {t('footer.privacy')}
+              </Link>
+              <Link 
+                href="/terms" 
+                className="text-xs text-muted-foreground hover:text-primary transition-colors duration-200"
+              >
+                {t('footer.terms')}
+              </Link>
             </div>
           </div>
         </div>

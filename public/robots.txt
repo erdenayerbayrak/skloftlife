@@ -1,0 +1,10 @@
+User-agent: *
+Allow: /
+
+# Sitemaps
+Sitemap: https://skloftlife-villas.com/sitemap.xml
+
+# Disallow search filter pages and API routes
+Disallow: /api/
+Disallow: /*?*search*
+Disallow: /*?*filter*

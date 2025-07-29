@@ -6,61 +6,118 @@
   "navigation": {
     "home": "Home",
     "about": "About",
-    "villas": "Villa Plans",
+    "plans": "Villa Plans", 
     "gallery": "Gallery",
-    "live": "Live Camera",
+    "live": "Live",
     "contact": "Contact"
   },
   "hero": {
     "title": "SkLoftLife Villas",
     "subtitle": "Luxury Living Redefined",
-    "cta": "Discover More"
+    "cta": "Discover More",
+    "learnMore": "Learn More",
+    "enter360": "Enter 360° View",
+    "switchToParallax": "Switch to Parallax View",
+    "mouseMoveHint": "Move mouse for parallax effect"
   },
   "about": {
     "title": "About the Project",
     "description": "SkLoftLife Villas combines modern architecture with natural beauty to create an exceptional living experience.",
-    "features": {
-      "title": "Key Features",
-      "modern": "Modern Architecture",
-      "sustainable": "Sustainable Design",
-      "premium": "Premium Materials",
-      "location": "Prime Location"
+    "sectionLabel": "Our Story",
+    "discoverVision": "Discover Our Vision",
+    "philosophy": {
+      "title": "Architectural Philosophy",
+      "paragraph1": "SkLoftLife Villas represents the harmonious fusion of contemporary design principles with timeless architectural excellence. Our philosophy centers on creating living spaces that transcend mere functionality to become sanctuaries of luxury and comfort.",
+      "paragraph2": "Every villa we craft embodies our commitment to sustainable architecture, utilizing eco-friendly materials and energy-efficient systems. We believe in designs that not only enhance the present living experience but also preserve the environment for future generations.",
+      "paragraph3": "The integration of indoor and outdoor spaces through expansive glass facades and open-plan designs creates a seamless connection with nature, allowing natural light to flood every corner and provide residents with breathtaking panoramic views.",
+      "innovationTitle": "Innovation First",
+      "innovationDescription": "Pioneering architectural solutions that redefine modern living",
+      "placeholderText": "Architecture Philosophy Image"
+    },
+    "process": {
+      "sectionLabel": "Our Process",
+      "title": "From Vision to Reality",
+      "step1": {
+        "title": "Conceptualization",
+        "description": "Understanding your vision and translating it into architectural concepts"
+      },
+      "step2": {
+        "title": "Design Development",
+        "description": "Detailed planning and refinement of every architectural element"
+      },
+      "step3": {
+        "title": "Construction Excellence",
+        "description": "Meticulous execution with premium materials and craftsmanship"
+      }
     }
   },
-  "villas": {
+  "plans": {
     "title": "Villa Plans",
+    "sectionLabel": "Architecture Plans",
+    "description": "Explore the details of our villa projects by examining our professional architectural plans",
     "downloadPdf": "Download PDF",
+    "view": "View",
+    "download": "Download",
     "specs": {
       "size": "Size",
-      "bedrooms": "Bedrooms",
+      "bedrooms": "Bedrooms", 
       "bathrooms": "Bathrooms",
       "price": "Starting from"
     }
   },
   "gallery": {
     "title": "Gallery",
-    "loading": "Loading images..."
+    "loading": "Loading images...",
+    "categories": {
+      "all": "All",
+      "exterior": "Exterior", 
+      "interior": "Interior"
+    }
   },
   "live": {
-    "title": "Live Camera",
-    "description": "Watch the construction progress in real-time"
+    "title": "Project Progress",
+    "description": "Track the current status and construction stages of our ongoing villa projects.",
+    "liveText": "Live"
   },
   "contact": {
     "title": "Contact Us",
+    "description": "Get in touch with us for your dream villa",
+    "sectionLabel": "Get In Touch",
     "form": {
       "name": "Your Name",
-      "email": "Email Address",
+      "email": "Email Address", 
       "phone": "Phone Number",
+      "subject": "Subject",
       "message": "Message",
       "submit": "Send Message",
       "success": "Thank you! We'll get back to you soon.",
       "error": "Something went wrong. Please try again."
     },
     "info": {
+      "title": "Get In Touch",
       "phone": "+90 555 123 4567",
-      "email": "info@skloftlife.com",
-      "address": "Antalya, Turkey"
+      "email": "info@skloftlife.com", 
+      "address": "Antalya, Turkey",
+      "addressLabel": "Address"
+    },
+    "actions": {
+      "call": "Call Us",
+      "whatsapp": "WhatsApp",
+      "email": "Send Email",
+      "callDescription": "Quick response via direct call",
+      "whatsappDescription": "Send instant message",
+      "emailDescription": "Send detailed information via email"
     }
+  },
+  "projects": {
+    "sectionLabel": "SkLoftLife Project",
+    "title": "Villa Blocks",
+    "description": "Discover the different blocks and common areas of our SkLoftLife villa complex",
+    "ablokDescription": "Modern design and comfortable living spaces",
+    "cblokDescription": "Luxury details and spacious villa concept",
+    "commonAreasDescription": "Social areas, terrace and landscape design",
+    "viewDetails": "View Details",
+    "viewAll": "View Full Gallery"
   },
   "footer": {
     "rights": "All rights reserved",

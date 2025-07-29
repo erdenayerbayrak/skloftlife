@@ -6,30 +6,58 @@
   "navigation": {
     "home": "Ana Sayfa",
     "about": "Hakkında",
-    "villas": "Villa Planları",
+    "plans": "Villa Planları",
     "gallery": "Galeri",
-    "live": "Canlı Kamera",
+    "live": "Canlı",
     "contact": "İletişim"
   },
   "hero": {
     "title": "SkLoftLife Villaları",
     "subtitle": "Lüks Yaşamın Yeni Tanımı",
-    "cta": "Keşfet"
+    "cta": "Keşfedin",
+    "learnMore": "Daha Fazla Öğren",
+    "enter360": "360° Görünüme Geç",
+    "switchToParallax": "Paralaks Görünümüne Geç",
+    "mouseMoveHint": "Paralaks efekti için fareyi hareket ettirin"
   },
   "about": {
     "title": "Proje Hakkında",
     "description": "SkLoftLife Villaları, modern mimariyi doğal güzellikle birleştirerek olağanüstü bir yaşam deneyimi sunuyor.",
-    "features": {
-      "title": "Öne Çıkan Özellikler",
-      "modern": "Modern Mimari",
-      "sustainable": "Sürdürülebilir Tasarım",
-      "premium": "Premium Malzemeler",
-      "location": "Ayrıcalıklı Konum"
+    "sectionLabel": "Hikayemiz",
+    "discoverVision": "Vizyonumuzu Keşfedin",
+    "philosophy": {
+      "title": "Mimari Felsefesi",
+      "paragraph1": "SkLoftLife Villaları, çağdaş tasarım ilkelerinin zamansız mimari mükemmellikle uyumlu bir şekilde birleşimini temsil eder. Felsefemiz, salt işlevselliği aşarak lüks ve konforun sığınağı haline gelen yaşam alanları yaratmaya odaklanır.",
+      "paragraph2": "Ürettiğimiz her villa, sürdürülebilir mimariye olan bağlılığımızı, çevre dostu malzemeler ve enerji verimli sistemler kullanarak yansıtır. Sadece mevcut yaşam deneyimini geliştirmekle kalmayıp, gelecek nesiller için çevreyi de koruyan tasarımlara inanıyoruz.",
+      "paragraph3": "Geniş cam cepheler ve açık plan tasarımlar aracılığıyla iç ve dış mekanların entegrasyonu, doğayla kesintisiz bir bağlantı yaratır ve doğal ışığın her köşeyi doldurmasına ve sakinlere nefes kesici panoramik manzaralar sunmasına olanak tanır.",
+      "innovationTitle": "Önce İnovasyon",
+      "innovationDescription": "Modern yaşamı yeniden tanımlayan öncü mimari çözümler",
+      "placeholderText": "Mimari Felsefesi Görseli"
+    },
+    "process": {
+      "sectionLabel": "Sürecimiz",
+      "title": "Vizyondan Gerçeğe",
+      "step1": {
+        "title": "Kavramsallaştırma",
+        "description": "Vizyonunuzu anlayarak mimari konseptlere dönüştürme"
+      },
+      "step2": {
+        "title": "Tasarım Geliştirme",
+        "description": "Her mimari öğenin detaylı planlanması ve rafine edilmesi"
+      },
+      "step3": {
+        "title": "İnşaat Mükemmelliği",
+        "description": "Premium malzemeler ve ustaca işçilikle titiz uygulama"
+      }
     }
   },
-  "villas": {
+  "plans": {
     "title": "Villa Planları",
+    "sectionLabel": "Mimari Planlar",
+    "description": "Profesyonel mimari planlarımızı inceleyerek villa projelerimizin detaylarını keşfedin",
     "downloadPdf": "PDF İndir",
+    "view": "Görüntüle",
+    "download": "İndir",
     "specs": {
       "size": "Büyüklük",
       "bedrooms": "Yatak Odası",
@@ -39,28 +67,57 @@
   },
   "gallery": {
     "title": "Galeri",
-    "loading": "Görüntüler yükleniyor..."
+    "loading": "Görüntüler yükleniyor...",
+    "categories": {
+      "all": "Tümü",
+      "exterior": "Dış Mekan",
+      "interior": "İç Mekan"
+    }
   },
   "live": {
-    "title": "Canlı Kamera",
-    "description": "İnşaat ilerlemesini gerçek zamanlı izleyin"
+    "title": "Proje İlerlemesi",
+    "description": "Devam eden villa projelerimizin güncel durumunu ve inşaat aşamalarını takip edin.",
+    "liveText": "Canlı"
   },
   "contact": {
     "title": "İletişim",
+    "description": "Hayalinizdeki villa için bizimle iletişime geçin",
+    "sectionLabel": "İletişime Geçin",
     "form": {
       "name": "Adınız",
       "email": "E-posta Adresi",
       "phone": "Telefon Numarası",
+      "subject": "Konu",
       "message": "Mesajınız",
       "submit": "Mesaj Gönder",
       "success": "Teşekkürler! En kısa sürede size dönüş yapacağız.",
       "error": "Bir hata oluştu. Lütfen tekrar deneyin."
     },
     "info": {
-      "phone": "+90 555 123 4567",
-      "email": "info@skloftlife.com",
-      "address": "Antalya, Türkiye"
+      "title": "İletişime Geçin",
+      "phone": "+90 535 717 8282",
+      "email": "skloftlife@gmail.com",
+      "address": "Kestel Mah. İsa Küçülmez Cad. 162 A Vision Apartmanı Alanya Antalya",
+      "addressLabel": "Adres"
+    },
+    "actions": {
+      "call": "Bizi Arayın",
+      "whatsapp": "WhatsApp'tan Yazın",
+      "email": "E-posta Gönderin",
+      "callDescription": "Doğrudan arama ile hızlı yanıt",
+      "whatsappDescription": "Anında mesaj gönderin",
+      "emailDescription": "E-posta ile detaylı bilgi gönderin"
     }
+  },
+  "projects": {
+    "sectionLabel": "SkLoftLife Projesi",
+    "title": "Villa Blokları",
+    "description": "SkLoftLife villa kompleksimizin farklı blokları ve ortak alanlarını keşfedin",
+    "ablokDescription": "Modern tasarım ve konforlu yaşam alanları",
+    "cblokDescription": "Lüks detaylar ve geniş villa konsepti",
+    "commonAreasDescription": "Sosyal alanlar, teras ve peyzaj düzenlemesi",
+    "viewDetails": "Detayları Görüntüle",
+    "viewAll": "Tüm Galeriyi Görüntüle"
   },
   "footer": {
     "rights": "Tüm hakları saklıdır",

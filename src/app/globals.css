@@ -126,6 +126,52 @@
 }
 
 @layer utilities {
+  /* Accessibility Improvements */
+  .focus-visible:focus-visible {
+    @apply outline-2 outline-offset-2 outline-primary;
+  }
+  
+  .sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+  }
+  
+  /* Reduced motion support */
+  @media (prefers-reduced-motion: reduce) {
+    .animate-luxury-fade-in,
+    .animate-elegant-slide-up,
+    .animate-float,
+    .shimmer-effect,
+    .animate-spin,
+    .animate-pulse {
+      animation: none !important;
+    }
+    
+    * {
+      transition-duration: 0.01ms !important;
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+    }
+  }
+  
+  /* High contrast mode support */
+  @media (prefers-contrast: high) {
+    .glass-morphism {
+      @apply bg-background border-2 border-foreground;
+    }
+    
+    .btn-primary, .btn-secondary {
+      @apply border-2 border-current;
+    }
+  }
+
   /* Sophisticated Animations */
   @keyframes luxury-fade-in {
     from {
