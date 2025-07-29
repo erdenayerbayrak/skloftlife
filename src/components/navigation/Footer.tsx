@@ -2,6 +2,7 @@
 
 import { useTranslations } from 'next-intl';
 import { Link } from '@/navigation';
+import { Logo } from '@/components/ui/Logo';
 
 const navigation = [
   { name: 'home', href: '/' },
@@ -66,18 +67,16 @@ export function Footer() {
             {/* Company Info - Logo & Slogan */}
             <div className="space-y-3">
               <Link href="/" className="inline-block group">
-                <div className="text-2xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
-                  SkLoftLife
-                </div>
+                <Logo size="sm" className="group-hover:scale-105 transition-transform duration-300" />
               </Link>
               <p className="text-sm text-muted-foreground leading-relaxed">
-                Luxury villa construction and architectural excellence.
+                {t('footer.companySlogan')}
               </p>
             </div>
 
             {/* Quick Links */}
             <div className="space-y-3">
-              <h4 className="text-sm font-semibold text-foreground">Quick Links</h4>
+              <h4 className="text-sm font-semibold text-foreground">{t('footer.quickLinks')}</h4>
               <nav className="space-y-2">
                 {navigation.slice(0, 3).map((item) => (
                   <Link
@@ -93,7 +92,7 @@ export function Footer() {
 
             {/* More Links */}
             <div className="space-y-3">
-              <h4 className="text-sm font-semibold text-foreground">Explore</h4>
+              <h4 className="text-sm font-semibold text-foreground">{t('footer.explore')}</h4>
               <nav className="space-y-2">
                 {navigation.slice(3).map((item) => (
                   <Link
@@ -109,7 +108,7 @@ export function Footer() {
 
             {/* Contact & Social */}
             <div className="space-y-3">
-              <h4 className="text-sm font-semibold text-foreground">Contact</h4>
+              <h4 className="text-sm font-semibold text-foreground">{t('footer.contactTitle')}</h4>
               <div className="space-y-2">
                 <a href={`tel:${t('contact.info.phone')}`} className="block text-sm text-muted-foreground hover:text-primary transition-colors duration-200">
                   {t('contact.info.phone')}

@@ -4,7 +4,18 @@ import { useState, useEffect } from 'react';
 import { useTranslations } from 'next-intl';
 import { Link, usePathname } from '@/navigation';
 import { LanguageSwitcher } from './LanguageSwitcher';
+import { Logo } from '@/components/ui/Logo';
 import { cn } from '@/lib/utils';
+import dynamic from 'next/dynamic';
+
+const ThemeToggle = dynamic(() => import('@/components/ui/ThemeToggle').then(mod => ({ default: mod.ThemeToggle })), {
+  ssr: false,
+  loading: () => (
+    <div className="p-2 rounded-lg bg-card hover:bg-muted transition-colors duration-200 w-9 h-9">
+      <div className="w-5 h-5 animate-pulse bg-muted-foreground/20 rounded" />
+    </div>
+  )
+});
 
 const navigation = [
   { name: 'home', href: '/' },
@@ -41,13 +52,8 @@ export function Header() {
     >
       <div className="container flex h-20 items-center justify-between">
         {/* Logo */}
-        <Link href="/" className="flex items-center space-x-2 group">
-          <div className="relative">
-            <div className="text-3xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
-              SkLoftLife
-            </div>
-            <div className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-primary to-accent group-hover:w-full transition-all duration-500" />
-          </div>
+        <Link href="/" className="group">
+          <Logo size="sm" className="group-hover:scale-105 transition-transform duration-300" />
         </Link>
 
         {/* Desktop Navigation */}
@@ -76,6 +82,7 @@ export function Header() {
 
         {/* Right Side Actions */}
         <div className="flex items-center space-x-4">
+          <ThemeToggle />
           <LanguageSwitcher />
           
           {/* Mobile Menu Button */}

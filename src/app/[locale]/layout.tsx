@@ -8,6 +8,7 @@ import { Header } from '@/components/navigation/Header';
 import { Footer } from '@/components/navigation/Footer';
 import { WhatsAppButton } from '@/components/WhatsAppButton';
 import { StructuredData } from '@/components/StructuredData';
+import { ThemeProvider } from '@/components/providers/ThemeProvider';
 import "../globals.css";
 
 const oxanium = Oxanium({
@@ -112,10 +113,10 @@ export default async function RootLayout({
             name: "SkLoftLife Villas",
             url: "https://skloftlife-villas.com",
             description: "Luxury villa construction and architecture company specializing in modern design and premium craftsmanship.",
-            telephone: "+90 555 123 4567",
-            email: "info@skloftlife.com",
+            telephone: "+90 535 717 8282",
+            email: "skloftlife@gmail.com",
             address: {
-              city: "Antalya",
+              city: "Alanya",
               region: "Antalya", 
               country: "TR"
             }
@@ -145,17 +146,19 @@ export default async function RootLayout({
           }} 
         />
       </head>
-      <body className={`${oxanium.variable} ${merriweather.variable} font-sans antialiased`}>
-        <NextIntlClientProvider messages={messages}>
-          <div className="min-h-screen flex flex-col bohemian-pattern luxury-gradient">
-            <Header />
-            <main className="flex-1 pt-20">
-              {children}
-            </main>
-            <Footer />
-            <WhatsAppButton />
-          </div>
-        </NextIntlClientProvider>
+      <body className={`${oxanium.variable} ${merriweather.variable} font-sans antialiased`} suppressHydrationWarning>
+        <ThemeProvider>
+          <NextIntlClientProvider messages={messages}>
+            <div className="min-h-screen flex flex-col bohemian-pattern luxury-gradient">
+              <Header />
+              <main className="flex-1 pt-20">
+                {children}
+              </main>
+              <Footer />
+              <WhatsAppButton />
+            </div>
+          </NextIntlClientProvider>
+        </ThemeProvider>
       </body>
     </html>
   );

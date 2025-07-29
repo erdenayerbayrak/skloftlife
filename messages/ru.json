@@ -95,9 +95,9 @@
     },
     "info": {
       "title": "Связаться с нами",
-      "phone": "+90 555 123 4567",
-      "email": "info@skloftlife.com",
-      "address": "Анталия, Турция",
+      "phone": "+90 535 717 8282",
+      "email": "skloftlife@gmail.com",
+      "address": "Kestel Mah. İsa Küçülmez Cad. 162 A Vision Apartmanı Alanya Antalya",
       "addressLabel": "Адрес"
     },
     "actions": {
@@ -122,6 +122,10 @@
   "footer": {
     "rights": "Все права защищены",
     "privacy": "Политика конфиденциальности",
-    "terms": "Условия использования"
+    "terms": "Условия использования",
+    "companySlogan": "Роскошное строительство вилл и архитектурное совершенство.",
+    "quickLinks": "Быстрые ссылки",
+    "explore": "Исследовать",
+    "contactTitle": "Контакты"
   }
 }
