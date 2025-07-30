@@ -46,7 +46,7 @@ export function Header() {
       className={cn(
         'fixed top-0 z-50 w-full transition-all duration-500',
         isScrolled 
-          ? 'glass-morphism shadow-lg' 
+          ? 'backdrop-blur-[20px] bg-[#0B0D0F]/70 border-b border-[#1F2733]/50 shadow-2xl' 
           : 'bg-transparent'
       )}
     >
@@ -65,14 +65,14 @@ export function Header() {
               className={cn(
                 'relative py-2 text-base lg:text-lg font-medium tracking-wide transition-all duration-300',
                 pathname === item.href
-                  ? 'text-primary'
-                  : 'text-foreground/80 hover:text-primary'
+                  ? 'text-[#C9A36B]'
+                  : 'text-white/90 hover:text-[#C9A36B]'
               )}
             >
               {t(item.name)}
               <span 
                 className={cn(
-                  'absolute bottom-0 left-0 h-0.5 bg-primary transition-all duration-300',
+                  'absolute bottom-0 left-0 h-0.5 bg-[#C9A36B] transition-all duration-300',
                   pathname === item.href ? 'w-full' : 'w-0 group-hover:w-full'
                 )}
               />

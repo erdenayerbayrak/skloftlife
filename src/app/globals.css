@@ -4,62 +4,79 @@
 
 @layer base {
   :root {
-    /* Luxury Villa Light Mode - Based on Natural Stone, Wood & Bronze */
-    --background: 35 20% 96%; /* Warm cream background inspired by villa interiors */
-    --foreground: 20 15% 15%; /* Deep charcoal text */
-    --card: 35 15% 93%; /* Light beige card backgrounds */
-    --card-foreground: 20 15% 15%;
-    --popover: 35 15% 93%;
-    --popover-foreground: 20 15% 15%;
-    --primary: 43 74% 49%; /* Elegant bronze/gold accent */
+    /* Premium Architectural Light Theme */
+    --bg: 0 0% 98%;
+    --surface: 0 0% 95%;
+    --text: 0 0% 10%;
+    --text-muted: 0 0% 40%;
+    --border: 0 0% 85%;
+    --accent: 35 55% 45%;
+    --accent-2: 35 45% 35%;
+    --overlay: rgba(255, 255, 255, 0.85);
+    
+    /* Legacy compatibility */
+    --background: var(--bg);
+    --foreground: var(--text);
+    --card: var(--surface);
+    --card-foreground: var(--text);
+    --popover: var(--surface);
+    --popover-foreground: var(--text);
+    --primary: var(--accent);
     --primary-foreground: 0 0% 100%;
-    --secondary: 30 12% 88%; /* Stone-like neutral */
-    --secondary-foreground: 20 15% 15%;
-    --muted: 30 12% 88%;
-    --muted-foreground: 20 8% 45%;
-    --accent: 25 50% 45%; /* Warm copper accent */
-    --accent-foreground: 0 0% 100%;
+    --secondary: 0 0% 90%;
+    --secondary-foreground: var(--text);
+    --muted: 0 0% 90%;
+    --muted-foreground: var(--text-muted);
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 100%;
-    --border: 30 10% 85%;
-    --input: 30 10% 85%;
-    --ring: 43 74% 49%;
-    --radius: 0.75rem;
+    --input: var(--border);
+    --ring: var(--accent);
+    --radius: 1rem;
     
     /* Shadows */
-    --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+    --shadow-sm: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
     --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
     --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
     --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    --shadow-2xl: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
   }
 
   .dark {
-    /* Luxury Villa Dark Mode - Rich Earth Tones */
-    --background: 20 15% 8%; /* Deep charcoal inspired by dark stone */
-    --foreground: 35 20% 95%; /* Warm cream text */
-    --card: 20 12% 12%; /* Dark stone card backgrounds */
-    --card-foreground: 35 20% 95%;
-    --popover: 20 12% 12%;
-    --popover-foreground: 35 20% 95%;
-    --primary: 43 74% 55%; /* Brighter bronze for dark mode */
-    --primary-foreground: 20 15% 8%;
-    --secondary: 20 8% 18%; /* Darker stone neutral */
-    --secondary-foreground: 35 20% 95%;
-    --muted: 20 8% 18%;
-    --muted-foreground: 30 10% 65%;
-    --accent: 25 50% 55%; /* Brighter copper for dark mode */
-    --accent-foreground: 20 15% 8%;
+    /* Premium Architectural Dark Theme */
+    --bg: 216 28% 5%; /* #0B0D0F */
+    --surface: 216 22% 8%; /* #111418 */
+    --text: 0 0% 92%; /* #EAEAEA */
+    --text-muted: 210 7% 63%; /* #9AA0A6 */
+    --border: 216 26% 16%; /* #1F2733 */
+    --accent: 33 43% 60%; /* #C9A36B */
+    --accent-2: 33 23% 45%; /* #8F7B5A */
+    --overlay: rgba(0, 0, 0, 0.65);
+    
+    /* Legacy compatibility */
+    --background: var(--bg);
+    --foreground: var(--text);
+    --card: var(--surface);
+    --card-foreground: var(--text);
+    --popover: var(--surface);
+    --popover-foreground: var(--text);
+    --primary: var(--accent);
+    --primary-foreground: 216 28% 5%;
+    --secondary: 216 20% 15%;
+    --secondary-foreground: var(--text);
+    --muted: 216 20% 15%;
+    --muted-foreground: var(--text-muted);
     --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 35 20% 95%;
-    --border: 20 8% 20%;
-    --input: 20 8% 20%;
-    --ring: 43 74% 55%;
+    --destructive-foreground: var(--text);
+    --input: var(--border);
+    --ring: var(--accent);
     
     /* Dark Mode Shadows */
-    --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.2);
-    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.3), 0 2px 4px -1px rgba(0, 0, 0, 0.2);
-    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.3), 0 4px 6px -2px rgba(0, 0, 0, 0.2);
-    --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.3), 0 10px 10px -5px rgba(0, 0, 0, 0.2);
+    --shadow-sm: 0 1px 3px 0 rgba(0, 0, 0, 0.5), 0 1px 2px 0 rgba(0, 0, 0, 0.4);
+    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.5), 0 2px 4px -1px rgba(0, 0, 0, 0.4);
+    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.5), 0 4px 6px -2px rgba(0, 0, 0, 0.4);
+    --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.5), 0 10px 10px -5px rgba(0, 0, 0, 0.4);
+    --shadow-2xl: 0 25px 50px -12px rgba(0, 0, 0, 0.75);
+    --shadow-gold: 0 10px 30px rgba(201, 163, 107, 0.25);
   }
 }
 
@@ -69,39 +86,49 @@
   }
   
   body {
-    @apply bg-background text-foreground text-lg;
-    font-family: var(--font-oxanium), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    @apply bg-background text-foreground;
+    font-family: var(--font-inter), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
   
   h1 {
-    @apply text-5xl sm:text-6xl md:text-7xl font-bold tracking-wide;
+    font-family: var(--font-playfair), serif;
+    font-size: clamp(40px, 6vw, 88px);
+    @apply font-bold leading-tight tracking-[0.02em] uppercase;
   }
   
   h2 {
-    @apply text-4xl sm:text-5xl md:text-6xl font-semibold tracking-wide;
+    font-family: var(--font-playfair), serif;
+    font-size: clamp(28px, 3.6vw, 48px);
+    @apply font-bold leading-tight tracking-[0.02em];
   }
   
   h3 {
-    @apply text-3xl sm:text-4xl md:text-5xl font-semibold tracking-wide;
+    font-family: var(--font-playfair), serif;
+    @apply text-2xl sm:text-3xl lg:text-4xl font-bold tracking-wide;
   }
   
   h4 {
-    @apply text-2xl sm:text-3xl md:text-4xl font-semibold tracking-wide;
+    font-family: var(--font-playfair), serif;
+    @apply text-xl sm:text-2xl lg:text-3xl font-semibold tracking-wide;
   }
   
   h5 {
-    @apply text-xl sm:text-2xl md:text-3xl font-semibold tracking-wide;
+    font-family: var(--font-inter), sans-serif;
+    @apply text-lg sm:text-xl lg:text-2xl font-semibold;
   }
   
   h6 {
-    @apply text-lg sm:text-xl md:text-2xl font-semibold tracking-wide;
+    font-family: var(--font-inter), sans-serif;
+    @apply text-base sm:text-lg lg:text-xl font-semibold;
   }
   
   p, .body-text {
-    font-family: var(--font-merriweather), serif;
-    @apply leading-relaxed text-lg sm:text-xl;
+    font-family: var(--font-inter), sans-serif;
+    @apply leading-relaxed text-base lg:text-lg;
   }
   
   /* Increased base font sizes */
@@ -128,32 +155,79 @@
     @apply mx-auto px-6 sm:px-8 lg:px-12 max-w-[1400px];
   }
   
+  /* Premium Buttons */
   .btn-primary {
-    @apply bg-primary text-primary-foreground px-8 py-4 rounded-xl font-medium hover:bg-primary/90 transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl;
+    @apply px-8 py-4 rounded-xl font-medium transform transition-all duration-300;
+    background: hsl(var(--accent));
+    color: hsl(var(--bg));
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  }
+  
+  .btn-primary:hover {
+    filter: brightness(1.1);
+    @apply scale-[1.02];
+    box-shadow: var(--shadow-gold);
   }
   
   .btn-secondary {
-    @apply bg-secondary text-secondary-foreground px-8 py-4 rounded-xl font-medium hover:bg-secondary/90 transform hover:scale-105 transition-all duration-300 shadow-md hover:shadow-lg;
+    @apply px-8 py-4 rounded-xl font-medium transform transition-all duration-300;
+    background: transparent;
+    color: hsl(var(--accent));
+    border: 1px solid hsl(var(--accent));
   }
   
+  .btn-secondary:hover {
+    background: hsl(var(--accent));
+    color: hsl(var(--bg));
+    @apply scale-[1.02];
+  }
+  
+  /* Premium Glass Morphism */
   .glass-morphism {
-    @apply backdrop-blur-xl bg-background/60 border border-border/50 shadow-xl;
+    @apply backdrop-blur-[12px] border shadow-xl;
+    background: rgba(255, 255, 255, 0.04);
+    border-color: rgba(255, 255, 255, 0.1);
   }
   
+  .dark .glass-morphism {
+    background: rgba(255, 255, 255, 0.04);
+    border-color: rgba(255, 255, 255, 0.1);
+  }
+  
+  /* Premium Card Glass */
+  .glass-card {
+    @apply backdrop-blur-[12px] rounded-2xl border p-6 lg:p-8 transition-all duration-300;
+    background: rgba(255, 255, 255, 0.04);
+    border-color: rgba(255, 255, 255, 0.1);
+  }
+  
+  .glass-card:hover {
+    @apply -translate-y-1;
+    background: rgba(255, 255, 255, 0.06);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+  }
+  
+  .dark .glass-card:hover {
+    box-shadow: var(--shadow-gold);
+  }
+  
+  /* Premium Gradients */
   .luxury-gradient {
-    background: linear-gradient(135deg, 
-      hsl(var(--primary) / 0.1) 0%, 
-      hsl(var(--accent) / 0.05) 50%, 
-      hsl(var(--primary) / 0.05) 100%);
+    background: linear-gradient(180deg, 
+      rgba(0, 0, 0, 0.55) 0%, 
+      rgba(0, 0, 0, 0.78) 60%, 
+      rgba(0, 0, 0, 0.88) 100%);
   }
   
+  .accent-gradient {
+    background: radial-gradient(circle, 
+      rgba(201, 163, 107, 0.25) 0%, 
+      transparent 60%);
+  }
+  
+  /* Remove bohemian pattern for cleaner dark theme */
   .bohemian-pattern {
-    background-image: 
-      radial-gradient(circle at 25% 25%, hsl(var(--primary) / 0.03) 0%, transparent 50%),
-      radial-gradient(circle at 75% 75%, hsl(var(--accent) / 0.03) 0%, transparent 50%),
-      radial-gradient(circle at 50% 50%, hsl(var(--primary) / 0.02) 0%, transparent 70%);
-    background-size: 400px 400px, 600px 600px, 800px 800px;
-    background-position: 0 0, 100px 100px, -100px -100px;
+    background: none;
   }
 }
 
@@ -204,26 +278,24 @@
     }
   }
 
-  /* Sophisticated Animations */
-  @keyframes luxury-fade-in {
+  /* Premium Animations */
+  @keyframes fade-up {
     from {
       opacity: 0;
-      transform: translateY(30px) scale(0.95);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0) scale(1);
-    }
-  }
-  
-  @keyframes elegant-slide-up {
-    from {
-      opacity: 0;
-      transform: translateY(50px);
+      transform: translateY(30px);
     }
     to {
       opacity: 1;
       transform: translateY(0);
+    }
+  }
+  
+  @keyframes pulse-gold {
+    0%, 100% {
+      box-shadow: 0 0 0 0 rgba(201, 163, 107, 0.4);
+    }
+    50% {
+      box-shadow: 0 0 20px 10px rgba(201, 163, 107, 0.2);
     }
   }
   
@@ -232,11 +304,11 @@
       transform: translateY(0px);
     }
     50% {
-      transform: translateY(-20px);
+      transform: translateY(-10px);
     }
   }
   
-  @keyframes shimmer {
+  @keyframes shimmer-gold {
     0% {
       background-position: -1000px 0;
     }

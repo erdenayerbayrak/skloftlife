@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Oxanium, Merriweather } from "next/font/google";
+import { Playfair_Display, Inter } from "next/font/google";
 import { NextIntlClientProvider } from 'next-intl';
 import { getMessages, setRequestLocale } from 'next-intl/server';
 import { notFound } from 'next/navigation';
@@ -11,16 +11,18 @@ import { StructuredData } from '@/components/StructuredData';
 import { ThemeProvider } from '@/components/providers/ThemeProvider';
 import "../globals.css";
 
-const oxanium = Oxanium({
+const playfair = Playfair_Display({
   subsets: ["latin"],
-  variable: "--font-oxanium",
-  weight: ['400', '500', '600', '700'],
+  variable: "--font-playfair",
+  weight: ['400', '500', '600', '700', '800', '900'],
+  display: 'swap',
 });
 
-const merriweather = Merriweather({
+const inter = Inter({
   subsets: ["latin"],
-  variable: "--font-merriweather",
-  weight: ['300', '400'],
+  variable: "--font-inter",
+  weight: ['300', '400', '500', '600', '700'],
+  display: 'swap',
 });
 
 export function generateStaticParams() {
@@ -146,7 +148,7 @@ export default async function RootLayout({
           }} 
         />
       </head>
-      <body className={`${oxanium.variable} ${merriweather.variable} font-sans antialiased`} suppressHydrationWarning>
+      <body className={`${playfair.variable} ${inter.variable} font-sans antialiased`} suppressHydrationWarning>
         <ThemeProvider>
           <NextIntlClientProvider messages={messages}>
             <div className="min-h-screen flex flex-col bohemian-pattern luxury-gradient">
