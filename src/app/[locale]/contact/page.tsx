@@ -79,7 +79,7 @@ export default function ContactPage() {
           {/* Map Section - Left 50% */}
           <div className="relative h-[300px] lg:h-full">
             <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d102303.45893587368!2d30.60202544686719!3d36.89761564590945!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14c39aaeddadadc1%3A0x95c69f73f9e32e33!2sAntalya!5e0!3m2!1str!2str!4v1234567890"
+              src="https://www.google.com/maps/embed/v1/place?key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8&q=Kestel%20Mah.%20%C4%B0sa%20K%C3%BC%C3%A7%C3%BClmez%20Cad.%20162%20A%20Vision%20Apartman%C4%B1%20Alanya%20Antalya&zoom=17"
               width="100%"
               height="100%"
               style={{ border: 0 }}

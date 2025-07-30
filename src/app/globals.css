@@ -69,20 +69,52 @@
   }
   
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground text-lg;
     font-family: var(--font-oxanium), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
   
-  h1, h2, h3, h4, h5, h6 {
-    font-family: var(--font-oxanium), sans-serif;
-    @apply font-semibold tracking-wide;
+  h1 {
+    @apply text-5xl sm:text-6xl md:text-7xl font-bold tracking-wide;
+  }
+  
+  h2 {
+    @apply text-4xl sm:text-5xl md:text-6xl font-semibold tracking-wide;
+  }
+  
+  h3 {
+    @apply text-3xl sm:text-4xl md:text-5xl font-semibold tracking-wide;
+  }
+  
+  h4 {
+    @apply text-2xl sm:text-3xl md:text-4xl font-semibold tracking-wide;
+  }
+  
+  h5 {
+    @apply text-xl sm:text-2xl md:text-3xl font-semibold tracking-wide;
+  }
+  
+  h6 {
+    @apply text-lg sm:text-xl md:text-2xl font-semibold tracking-wide;
   }
   
   p, .body-text {
     font-family: var(--font-merriweather), serif;
-    @apply leading-relaxed;
+    @apply leading-relaxed text-lg sm:text-xl;
+  }
+  
+  /* Increased base font sizes */
+  label {
+    @apply text-base sm:text-lg;
+  }
+  
+  input, textarea, select {
+    @apply text-base sm:text-lg;
+  }
+  
+  button {
+    @apply text-base sm:text-lg;
   }
   
   /* Smooth transitions for theme changes */
