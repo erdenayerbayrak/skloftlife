@@ -43,7 +43,7 @@ export function Logo({ className = "", size = 'md' }: LogoProps) {
   return (
     <div className={`${sizeClasses[size]} ${className}`}>
       <Image
-        src={isDark ? "/skdesinglogo-2.png" : "/skdesinglogo-1.png"}
+        src={isDark ? "/logo2.png" : "/skdesinglogo-1.png"}
         alt="SK Design Logo"
         width={200}
         height={200}
