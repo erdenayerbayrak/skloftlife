@@ -14,28 +14,9 @@ interface LiveCameraFeedProps {
 
 export function LiveCameraFeed({ 
   projectName, 
-  imageSrc, 
-  lastUpdate
+  imageSrc
 }: LiveCameraFeedProps) {
-  const [currentTime, setCurrentTime] = useState(new Date());
   const [isFullscreen, setIsFullscreen] = useState(false);
-
-  useEffect(() => {
-    // Reduce update frequency to improve performance
-    const timer = setInterval(() => {
-      setCurrentTime(new Date());
-    }, 30000); // Update every 30 seconds instead of every second
-
-    return () => clearInterval(timer);
-  }, []);
-
-  const formatTime = (date: Date) => {
-    return date.toLocaleTimeString('tr-TR', {
-      hour: '2-digit',
-      minute: '2-digit',
-      second: '2-digit'
-    });
-  };
 
   const toggleFullscreen = () => {
     setIsFullscreen(!isFullscreen);

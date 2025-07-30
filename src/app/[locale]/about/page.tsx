@@ -75,10 +75,11 @@ export default async function AboutPage() {
 
             <div className="relative">
               <div className="aspect-[4/5] rounded-3xl overflow-hidden shadow-2xl">
-                <img
+                <Image
                   src="/images/gallery/3D DIŞ GÖRSEL/sk-villacamera3 kopyası.jpg"
                   alt="SkLoft Villaları - Felsefemiz"
-                  className="w-full h-full object-cover"
+                  fill
+                  className="object-cover"
                 />
               </div>
               
