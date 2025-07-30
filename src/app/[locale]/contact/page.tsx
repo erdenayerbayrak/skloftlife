@@ -52,9 +52,11 @@ export default function ContactPage() {
 
   return (
     <div className="min-h-screen">
-      {/* Header */}
-      <div className="container mx-auto px-4 py-12">
-        <div className="text-center mb-8 space-y-4">
+      {/* Header Section - Architectural Marble */}
+      <section className="py-6 relative architectural-marble-background">
+        <div className="absolute inset-0 architectural-marble-overlay"></div>
+        <div className="container mx-auto py-4 px-4 relative z-10">
+          <div className="max-w-7xl mx-auto text-center mb-4 space-y-2">
           <div className="flex items-center justify-center gap-4">
             <div className="w-16 h-px bg-gradient-to-r from-transparent to-primary" />
             <span className="text-sm font-medium text-primary uppercase tracking-wider">
@@ -63,15 +65,16 @@ export default function ContactPage() {
             <div className="w-16 h-px bg-gradient-to-r from-primary to-transparent" />
           </div>
           
-          <h1 className="text-4xl md:text-5xl font-bold tracking-tight bg-gradient-to-r from-foreground via-primary to-accent bg-clip-text text-transparent">
+          <h1 className="text-2xl md:text-3xl font-bold tracking-tight bg-gradient-to-r from-foreground via-primary to-accent bg-clip-text text-transparent">
             {t('title')}
           </h1>
           
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed">
+          <p className="text-base text-muted-foreground max-w-xl mx-auto">
             {t('description')}
           </p>
+          </div>
         </div>
-      </div>
+      </section>
 
       {/* Main Content - 50% Map, 50% Contact Info */}
       <div className="relative min-h-[600px] lg:h-[600px]">

@@ -53,26 +53,34 @@ export default async function LivePage() {
   const t = await getTranslations('live');
 
   return (
-    <div className="container mx-auto py-12 px-4">
-      <div className="max-w-7xl mx-auto">
-        {/* Header */}
-        <div className="text-center mb-12 space-y-4">
-          <div className="flex items-center justify-center gap-4">
-            <div className="w-16 h-px bg-gradient-to-r from-transparent to-primary" />
-            <span className="text-sm font-medium text-primary uppercase tracking-wider">
-              Live Progress
-            </span>
-            <div className="w-16 h-px bg-gradient-to-r from-primary to-transparent" />
+    <div className="min-h-screen">
+      {/* Header Section - Black Marble */}
+      <section className="py-6 relative black-marble-background">
+        <div className="absolute inset-0 black-marble-overlay"></div>
+        <div className="container mx-auto py-4 px-4 relative z-10">
+          <div className="max-w-7xl mx-auto text-center mb-4 space-y-2">
+            <div className="flex items-center justify-center gap-4">
+              <div className="w-16 h-px bg-gradient-to-r from-transparent to-primary" />
+              <span className="text-sm font-medium text-primary uppercase tracking-wider">
+                {t('liveText')}
+              </span>
+              <div className="w-16 h-px bg-gradient-to-r from-primary to-transparent" />
+            </div>
+            
+            <h1 className="text-2xl md:text-3xl font-bold tracking-tight bg-gradient-to-r from-foreground via-primary to-accent bg-clip-text text-transparent">
+              {t('title')}
+            </h1>
+            
+            <p className="text-base text-muted-foreground max-w-xl mx-auto">
+              {t('description')}
+            </p>
           </div>
-          
-          <h1 className="text-4xl md:text-5xl font-bold tracking-tight bg-gradient-to-r from-foreground via-primary to-accent bg-clip-text text-transparent">
-            {t('title')}
-          </h1>
-          
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed">
-            {t('description')}
-          </p>
         </div>
+      </section>
+
+      {/* Main Content */}
+      <div className="container mx-auto py-12 px-4">
+        <div className="max-w-7xl mx-auto">
 
         {/* Live Projects Grid */}
         <div className="grid lg:grid-cols-2 gap-6 mb-12">
@@ -115,7 +123,7 @@ export default async function LivePage() {
             </div>
           ))}
         </div>
-
+        </div>
       </div>
     </div>
   );

@@ -186,7 +186,7 @@
 
 @layer components {
   .container {
-    @apply mx-auto px-6 sm:px-8 lg:px-12 max-w-[1400px];
+    @apply mx-auto px-4 sm:px-6 md:px-8 lg:px-12 max-w-[1400px];
   }
   
   /* Theme-Aware Buttons */
@@ -224,9 +224,9 @@
     border-color: rgba(255, 255, 255, 0.1);
   }
   
-  /* Theme-Aware Cards */
+  /* Theme-Aware Cards - improved mobile */
   .luxury-card {
-    @apply rounded-2xl border border-border bg-card p-6 lg:p-8 transition-all duration-300;
+    @apply rounded-xl sm:rounded-2xl border border-border bg-card p-4 sm:p-6 lg:p-8 transition-all duration-300;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
   }
   
@@ -271,12 +271,12 @@
   
   /* Container for 8px rhythm */
   .luxury-container {
-    @apply mx-auto px-6 sm:px-8 lg:px-12 max-w-7xl;
+    @apply mx-auto px-4 sm:px-6 md:px-8 lg:px-12 max-w-7xl;
   }
   
-  /* Luxury spacing */
+  /* Luxury spacing - improved mobile */
   .luxury-section {
-    @apply py-24 md:py-28 xl:py-32;
+    @apply py-16 sm:py-20 md:py-24 lg:py-28 xl:py-32;
   }
   
   /* Architectural Textures */
@@ -332,6 +332,184 @@
   /* Remove old stone classes */
   .stone-texture, .marble-veining, .stone-surface {
     background: none;
+  }
+
+  /* 2. Cream Marble Theme - About Hero */
+  .cream-marble-background {
+    background: linear-gradient(135deg, 
+      #F8F6F0 0%,     /* Warm cream */
+      #F2EFE8 25%,    /* Light cream */
+      #F0EBE3 50%,    /* Cream base */
+      #EDE7DD 75%,    /* Deeper cream */
+      #E8E1D7 100%    /* Rich cream */
+    );
+  }
+
+  .cream-marble-overlay {
+    background-image: 
+      /* Cream marble veining */
+      linear-gradient(60deg, transparent 25%, rgba(218,165,32,0.06) 28%, rgba(218,165,32,0.08) 30%, transparent 35%),
+      linear-gradient(-30deg, transparent 40%, rgba(139,115,85,0.04) 42%, rgba(139,115,85,0.06) 44%, transparent 48%),
+      linear-gradient(120deg, transparent 60%, rgba(160,130,98,0.05) 62%, transparent 65%),
+      /* Subtle texture */
+      radial-gradient(ellipse at 30% 20%, rgba(218,165,32,0.03) 0%, transparent 50%),
+      radial-gradient(ellipse at 70% 80%, rgba(139,115,85,0.04) 0%, transparent 40%);
+    background-size: 600px 400px, 500px 600px, 400px 300px, 200px 200px, 300px 150px;
+    opacity: 0.6;
+  }
+
+  /* 3. White Carrara Marble Theme - About Philosophy */
+  .white-marble-background {
+    background: linear-gradient(135deg, 
+      #FEFEFE 0%,     /* Pure white */
+      #FAFAFA 25%,    /* Off white */
+      #F5F5F5 50%,    /* Light grey */
+      #F8F8F8 75%,    /* Warm white */
+      #FCFCFC 100%    /* Near white */
+    );
+  }
+
+  .white-marble-overlay {
+    background-image: 
+      /* Carrara veining */
+      linear-gradient(45deg, transparent 30%, rgba(108,117,125,0.08) 32%, rgba(108,117,125,0.12) 34%, transparent 38%),
+      linear-gradient(-60deg, transparent 50%, rgba(173,181,189,0.06) 52%, rgba(173,181,189,0.04) 54%, transparent 58%),
+      linear-gradient(90deg, transparent 65%, rgba(218,165,32,0.03) 67%, transparent 70%),
+      /* Subtle marble texture */
+      radial-gradient(ellipse at 25% 75%, rgba(108,117,125,0.05) 0%, transparent 40%),
+      radial-gradient(ellipse at 75% 25%, rgba(173,181,189,0.04) 0%, transparent 50%);
+    background-size: 700px 500px, 800px 400px, 600px 200px, 250px 250px, 200px 300px;
+    opacity: 0.5;
+  }
+
+  /* 4. Black Marble with Gold Theme - Gallery Header */
+  .black-marble-background {
+    background: linear-gradient(135deg, 
+      #1A1A1A 0%,     /* Deep black */
+      #0F0F0F 25%,    /* Darker black */
+      #1C1C1C 50%,    /* Rich black */
+      #141414 75%,    /* Dark charcoal */
+      #0A0A0A 100%    /* Pure black */
+    );
+  }
+
+  .black-marble-overlay {
+    background-image: 
+      /* Rich gold veining */
+      linear-gradient(30deg, transparent 25%, rgba(255,215,0,0.15) 28%, rgba(255,215,0,0.2) 30%, transparent 35%),
+      linear-gradient(-45deg, transparent 45%, rgba(218,165,32,0.12) 47%, rgba(218,165,32,0.08) 49%, transparent 53%),
+      linear-gradient(75deg, transparent 60%, rgba(255,223,0,0.1) 62%, transparent 65%),
+      /* Gold accents */
+      radial-gradient(ellipse at 20% 60%, rgba(255,215,0,0.08) 0%, transparent 40%),
+      radial-gradient(ellipse at 80% 30%, rgba(218,165,32,0.06) 0%, transparent 50%);
+    background-size: 800px 600px, 600px 800px, 400px 300px, 300px 200px, 250px 300px;
+    opacity: 0.8;
+  }
+
+  /* 5. Architectural Marble Theme - Plans/Contact */
+  .architectural-marble-background {
+    background: linear-gradient(135deg, 
+      #E8E3DA 0%,     /* Light stone */
+      #E2DDD4 25%,    /* Cool stone */
+      #DDD8CE 50%,    /* Neutral stone */
+      #D8D3C8 75%,    /* Warm stone */
+      #D3CEC3 100%    /* Deep stone */
+    );
+  }
+
+  .architectural-marble-overlay {
+    background-image: 
+      /* Professional grey lines */
+      linear-gradient(0deg, transparent 40%, rgba(108,117,125,0.06) 42%, rgba(108,117,125,0.04) 44%, transparent 48%),
+      linear-gradient(90deg, transparent 55%, rgba(134,142,150,0.05) 57%, transparent 60%),
+      linear-gradient(45deg, transparent 70%, rgba(173,181,189,0.04) 72%, transparent 75%),
+      /* Architectural texture */
+      radial-gradient(ellipse at 40% 40%, rgba(108,117,125,0.03) 0%, transparent 60%),
+      radial-gradient(ellipse at 60% 60%, rgba(134,142,150,0.02) 0%, transparent 70%);
+    background-size: 400px 800px, 800px 400px, 500px 500px, 300px 300px, 200px 200px;
+    opacity: 0.4;
+  }
+
+  /* Dark mode variations */
+  .dark .cream-marble-background {
+    background: linear-gradient(135deg, 
+      #1A1A1A 0%,     /* Rich black */
+      #2D2D2D 20%,    /* Charcoal */
+      #1F1F1F 40%,    /* Deep black */
+      #2A2A2A 60%,    /* Medium charcoal */
+      #1C1C1C 80%,    /* Black */
+      #252525 100%    /* Light charcoal */
+    );
+  }
+
+  .dark .white-marble-background {
+    background: linear-gradient(135deg, 
+      #1A1A1A 0%,     /* Deep black */
+      #0F0F0F 25%,    /* Darker black */
+      #1C1C1C 50%,    /* Rich black */
+      #141414 75%,    /* Dark charcoal */
+      #0A0A0A 100%    /* Pure black */
+    );
+  }
+
+  .dark .black-marble-background {
+    background: linear-gradient(135deg, 
+      #1A1A1A 0%,     /* Deep black */
+      #0F0F0F 25%,    /* Darker black */
+      #1C1C1C 50%,    /* Rich black */
+      #141414 75%,    /* Dark charcoal */
+      #0A0A0A 100%    /* Pure black */
+    );
+  }
+
+  .dark .architectural-marble-background {
+    background: linear-gradient(135deg, 
+      #1A1A1A 0%,     /* Deep black */
+      #0F0F0F 25%,    /* Darker black */
+      #1C1C1C 50%,    /* Rich black */
+      #141414 75%,    /* Dark charcoal */
+      #0A0A0A 100%    /* Pure black */
+    );
+  }
+
+  /* Dark mode overlay adjustments */
+  .dark .cream-marble-overlay {
+    background-image: 
+      /* Elegant dark marble veining */
+      linear-gradient(60deg, transparent 25%, rgba(197,165,114,0.15) 28%, rgba(197,165,114,0.2) 30%, transparent 35%),
+      linear-gradient(-30deg, transparent 40%, rgba(255,215,0,0.08) 42%, rgba(255,215,0,0.12) 44%, transparent 48%),
+      linear-gradient(120deg, transparent 60%, rgba(218,165,32,0.1) 62%, transparent 65%),
+      /* Premium gold accents */
+      radial-gradient(ellipse at 30% 20%, rgba(197,165,114,0.12) 0%, transparent 50%),
+      radial-gradient(ellipse at 70% 80%, rgba(255,215,0,0.08) 0%, transparent 40%);
+    background-size: 600px 400px, 500px 600px, 400px 300px, 200px 200px, 300px 150px;
+    opacity: 0.9;
+  }
+
+  .dark .white-marble-overlay {
+    background-image: 
+      /* Rich gold veining */
+      linear-gradient(30deg, transparent 25%, rgba(255,215,0,0.15) 28%, rgba(255,215,0,0.2) 30%, transparent 35%),
+      linear-gradient(-45deg, transparent 45%, rgba(218,165,32,0.12) 47%, rgba(218,165,32,0.08) 49%, transparent 53%),
+      linear-gradient(75deg, transparent 60%, rgba(255,223,0,0.1) 62%, transparent 65%),
+      /* Gold accents */
+      radial-gradient(ellipse at 20% 60%, rgba(255,215,0,0.08) 0%, transparent 40%),
+      radial-gradient(ellipse at 80% 30%, rgba(218,165,32,0.06) 0%, transparent 50%);
+    background-size: 800px 600px, 600px 800px, 400px 300px, 300px 200px, 250px 300px;
+    opacity: 0.8;
+  }
+
+  .dark .architectural-marble-overlay {
+    background-image: 
+      /* Rich gold veining */
+      linear-gradient(30deg, transparent 25%, rgba(255,215,0,0.15) 28%, rgba(255,215,0,0.2) 30%, transparent 35%),
+      linear-gradient(-45deg, transparent 45%, rgba(218,165,32,0.12) 47%, rgba(218,165,32,0.08) 49%, transparent 53%),
+      linear-gradient(75deg, transparent 60%, rgba(255,223,0,0.1) 62%, transparent 65%),
+      /* Gold accents */
+      radial-gradient(ellipse at 20% 60%, rgba(255,215,0,0.08) 0%, transparent 40%),
+      radial-gradient(ellipse at 80% 30%, rgba(218,165,32,0.06) 0%, transparent 50%);
+    background-size: 800px 600px, 600px 800px, 400px 300px, 300px 200px, 250px 300px;
+    opacity: 0.8;
   }
 }
 
@@ -477,5 +655,51 @@
   
   .animation-delay-1200 {
     animation-delay: 1200ms;
+  }
+
+  /* Mobile Optimizations */
+  @media (max-width: 640px) {
+    .container {
+      @apply px-4;
+    }
+    
+    .luxury-container {
+      @apply px-4;
+    }
+    
+    /* Smaller touch targets for mobile */
+    .btn-primary, .btn-secondary {
+      @apply px-6 py-3 text-sm;
+    }
+    
+    /* Improved mobile typography */
+    h1 {
+      font-size: clamp(32px, 8vw, 48px) !important;
+    }
+    
+    h2 {
+      font-size: clamp(24px, 6vw, 36px) !important;
+    }
+    
+    /* Mobile-friendly cards */
+    .luxury-card {
+      @apply p-4 rounded-xl;
+    }
+    
+    /* Better mobile spacing */
+    .luxury-section {
+      @apply py-12;
+    }
+  }
+
+  /* Tablet optimizations */
+  @media (min-width: 641px) and (max-width: 1024px) {
+    .container {
+      @apply px-6;
+    }
+    
+    .luxury-container {
+      @apply px-6;
+    }
   }
 }

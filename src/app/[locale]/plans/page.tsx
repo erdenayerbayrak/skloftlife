@@ -43,10 +43,13 @@ export default function PlansPage() {
   };
 
   return (
-    <div className="container mx-auto py-12 px-4">
-      <div className="max-w-7xl mx-auto">
-        {/* Header */}
-        <div className="text-center mb-12 space-y-4">
+    <div className="min-h-screen">
+      {/* Header Section - Architectural Marble */}
+      <section className="py-6 relative architectural-marble-background">
+        <div className="absolute inset-0 architectural-marble-overlay"></div>
+        <div className="container mx-auto py-4 px-4 relative z-10">
+          <div className="max-w-7xl mx-auto">
+            <div className="text-center mb-4 space-y-2">
           <div className="flex items-center justify-center gap-4">
             <div className="w-16 h-px bg-gradient-to-r from-transparent to-primary" />
             <span className="text-sm font-medium text-primary uppercase tracking-wider">
@@ -55,17 +58,23 @@ export default function PlansPage() {
             <div className="w-16 h-px bg-gradient-to-r from-primary to-transparent" />
           </div>
           
-          <h1 className="text-4xl md:text-5xl font-bold tracking-tight bg-gradient-to-r from-foreground via-primary to-accent bg-clip-text text-transparent">
+          <h1 className="text-2xl md:text-3xl font-bold tracking-tight bg-gradient-to-r from-foreground via-primary to-accent bg-clip-text text-transparent">
             {t('title')}
           </h1>
           
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed">
+          <p className="text-base text-muted-foreground max-w-xl mx-auto">
             {t('description')}
           </p>
+            </div>
+          </div>
         </div>
+      </section>
 
-        {/* Plan Categories */}
-        <div className="space-y-12">
+      {/* Main Plans Content */}
+      <div className="container mx-auto py-12 px-4">
+        <div className="max-w-7xl mx-auto">
+          {/* Plan Categories */}
+          <div className="space-y-12">
           {planCategories.map((category, categoryIndex) => (
             <div key={category.id} className="space-y-6">
               {/* Category Header */}
@@ -145,9 +154,9 @@ export default function PlansPage() {
               </div>
             </div>
           ))}
+          </div>
         </div>
       </div>
-
       <style jsx>{`
         @keyframes fadeIn {
           from {

@@ -36,53 +36,64 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Luxury About Section */}
-      <section className="luxury-section">
-        <div className="luxury-container">
-          <div className="grid grid-cols-12 gap-16 items-center">
-            <div className="col-span-12 lg:col-span-5 space-y-8">
-              <div className="space-y-6">
+      {/* Luxury About Section - Subtle Cream Accent */}
+      <section className="py-16 md:py-20 relative cream-marble-background">
+        <div className="absolute inset-0 cream-marble-overlay opacity-30"></div>
+        <div className="container relative z-10">
+          <div className="grid grid-cols-12 gap-8 lg:gap-12 items-center">
+            <div className="col-span-12 lg:col-span-6 space-y-6">
+              <div className="space-y-4">
                 <div className="flex items-center gap-4">
-                  <div className="w-16 h-px bg-accent" />
+                  <div className="w-12 h-px bg-accent" />
                   <span className="text-sm font-medium text-accent uppercase tracking-wider">
                     {t('about.sectionLabel')}
                   </span>
                 </div>
                 
-                <h2 className="text-foreground">
+                <h2 className="text-2xl md:text-3xl lg:text-4xl font-cormorant font-medium text-foreground">
                   {t('about.title')}
                 </h2>
                 
-                <p className="text-lg text-muted-foreground leading-relaxed">
+                <p className="text-base lg:text-lg text-muted-foreground leading-relaxed">
                   {t('about.description')}
                 </p>
               </div>
 
               <Link
                 href="/about"
-                className="inline-flex items-center gap-3 text-foreground hover:gap-6 transition-all duration-300 font-medium group underline underline-offset-4"
+                className="inline-flex items-center gap-3 text-foreground hover:gap-5 transition-all duration-300 font-medium group underline underline-offset-4 text-sm lg:text-base"
               >
                 {t('about.discoverVision')}
-                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg className="w-4 h-4 lg:w-5 lg:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                 </svg>
               </Link>
             </div>
 
-            <div className="col-span-12 lg:col-span-6 lg:col-start-7">
-              <div className="luxury-card">
-                <div className="aspect-[4/5] rounded-xl overflow-hidden relative">
+            <div className="col-span-12 lg:col-span-5 lg:col-start-8">
+              <div className="relative bg-card rounded-2xl p-4 shadow-lg border border-border/50 hover:shadow-xl transition-all duration-300">
+                <div className="aspect-[4/5] rounded-xl overflow-hidden relative bg-gradient-to-br from-muted/20 to-muted/40">
                   <WatermarkedImage
                     src="/images/gallery/İÇ MEKAN/skvillasaloncamera1.jpg"
                     alt="Luxury Villa Interior"
                     fill
-                    sizes="(max-width: 768px) 100vw, 50vw"
-                    className="object-cover"
+                    sizes="(max-width: 768px) 100vw, 40vw"
+                    className="object-cover transition-transform duration-500 hover:scale-105"
                     priority={true}
                     quality={80}
-                    watermarkClassName="opacity-5"
+                    watermarkClassName="opacity-10"
                   />
+                  
+                  {/* Light mode visibility enhancement */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent opacity-50 dark:opacity-0 transition-opacity duration-300"></div>
+                  
+                  {/* Black frame for light mode */}
+                  <div className="absolute inset-0 rounded-xl border-2 border-black/80 dark:border-transparent transition-all duration-300"></div>
                 </div>
+                
+                {/* Decorative elements for better light mode visibility */}
+                <div className="absolute -top-2 -right-2 w-4 h-4 bg-accent/20 rounded-full blur-sm dark:opacity-0"></div>
+                <div className="absolute -bottom-2 -left-2 w-6 h-6 bg-accent/10 rounded-full blur-lg dark:opacity-0"></div>
               </div>
             </div>
           </div>

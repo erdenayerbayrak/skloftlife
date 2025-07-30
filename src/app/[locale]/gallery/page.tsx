@@ -98,29 +98,36 @@ export default function GalleryPage() {
   };
 
   return (
-    <div className="container mx-auto py-12 px-4">
-      <div className="max-w-7xl mx-auto">
-        {/* Header */}
-        <div className="text-center mb-12 space-y-4">
+    <div className="min-h-screen">
+      {/* Header Section - Black Marble */}
+      <section className="py-6 relative black-marble-background">
+        <div className="absolute inset-0 black-marble-overlay"></div>
+        <div className="container mx-auto py-4 px-4 relative z-10">
+          <div className="max-w-7xl mx-auto text-center mb-4 space-y-2">
           <div className="flex items-center justify-center gap-4">
-            <div className="w-16 h-px bg-gradient-to-r from-transparent to-primary" />
-            <span className="text-sm font-medium text-primary uppercase tracking-wider">
+            <div className="w-16 h-px bg-gradient-to-r from-transparent to-yellow-400" />
+            <span className="text-sm font-medium text-yellow-400 uppercase tracking-wider">
               Visual Collection
             </span>
-            <div className="w-16 h-px bg-gradient-to-r from-primary to-transparent" />
+            <div className="w-16 h-px bg-gradient-to-r from-yellow-400 to-transparent" />
           </div>
           
-          <h1 className="text-4xl md:text-5xl font-bold tracking-tight bg-gradient-to-r from-foreground via-primary to-accent bg-clip-text text-transparent">
+          <h1 className="text-2xl md:text-3xl font-bold tracking-tight text-white" style={{textShadow: '2px 2px 8px rgba(0,0,0,0.8)'}}>
             {t('title')}
           </h1>
           
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed">
+          <p className="text-base text-gray-200 max-w-xl mx-auto" style={{textShadow: '1px 1px 4px rgba(0,0,0,0.7)'}}>
             SkLoftLife Villalarının muhteşem görsellerini keşfedin ve lüks yaşamın her detayını deneyimleyin
           </p>
+          </div>
         </div>
+      </section>
 
-        {/* Category Filter */}
-        <div className="flex flex-wrap justify-center gap-3 mb-8">
+      {/* Main Gallery Content */}
+      <div className="container mx-auto py-12 px-4">
+        <div className="max-w-7xl mx-auto">
+          {/* Category Filter */}
+          <div className="flex flex-wrap justify-center gap-3 mb-8">
           {categories.map((category) => (
             <button
               key={category.id}
@@ -157,7 +164,7 @@ export default function GalleryPage() {
                 fill
                 className="object-cover transition-transform duration-700 group-hover:scale-110"
                 sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, (max-width: 1280px) 33vw, 25vw"
-                loading={index < 8 ? 'eager' : 'lazy'} // Load first 8 images immediately
+                priority={index < 8} // Load first 8 images immediately
                 quality={75} // Reduce quality for faster loading
                 watermarkClassName="opacity-30"
               />
@@ -225,8 +232,8 @@ export default function GalleryPage() {
             </div>
           </div>
         )}
+        </div>
       </div>
-
       <style jsx>{`
         @keyframes fadeIn {
           from {

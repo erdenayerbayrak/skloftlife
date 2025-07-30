@@ -1,15 +1,17 @@
 import { getTranslations } from 'next-intl/server';
+import Image from 'next/image';
 
 export default async function AboutPage() {
   const t = await getTranslations('about');
 
   return (
     <div className="min-h-screen">
-      {/* Hero Section */}
-      <section className="py-24 relative overflow-hidden">
-        <div className="container">
-          <div className="max-w-3xl mx-auto text-center space-y-6">
-            <div className="flex items-center justify-center gap-4 mb-6">
+      {/* Hero Section - Cream Marble */}
+      <section className="py-6 relative overflow-hidden cream-marble-background">
+        <div className="absolute inset-0 cream-marble-overlay"></div>
+        <div className="container py-4 px-4 relative z-10">
+          <div className="max-w-7xl mx-auto text-center mb-4 space-y-2">
+            <div className="flex items-center justify-center gap-4">
               <div className="w-16 h-px bg-gradient-to-r from-transparent to-primary" />
               <span className="text-sm font-medium text-primary uppercase tracking-wider">
                 {t('sectionLabel')}
@@ -17,13 +19,13 @@ export default async function AboutPage() {
               <div className="w-16 h-px bg-gradient-to-r from-primary to-transparent" />
             </div>
             
-            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight text-shadow-luxury">
+            <h1 className="text-2xl md:text-3xl font-bold tracking-tight text-shadow-luxury">
               <span className="bg-gradient-to-r from-foreground via-primary to-accent bg-clip-text text-transparent">
                 {t('title')}
               </span>
             </h1>
             
-            <p className="text-lg md:text-xl text-muted-foreground leading-relaxed max-w-2xl mx-auto">
+            <p className="text-base text-muted-foreground max-w-xl mx-auto">
               {t('description')}
             </p>
           </div>
@@ -35,7 +37,7 @@ export default async function AboutPage() {
       </section>
 
       {/* Philosophy Section */}
-      <section className="py-24 relative">
+      <section className="py-24">
         <div className="container">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div className="space-y-8">
