@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Playfair_Display, Inter } from "next/font/google";
+import { Cormorant_Garamond, Inter } from "next/font/google";
 import { NextIntlClientProvider } from 'next-intl';
 import { getMessages, setRequestLocale } from 'next-intl/server';
 import { notFound } from 'next/navigation';
@@ -11,10 +11,10 @@ import { StructuredData } from '@/components/StructuredData';
 import { ThemeProvider } from '@/components/providers/ThemeProvider';
 import "../globals.css";
 
-const playfair = Playfair_Display({
+const cormorant = Cormorant_Garamond({
   subsets: ["latin"],
-  variable: "--font-playfair",
-  weight: ['400', '500', '600', '700', '800', '900'],
+  variable: "--font-cormorant",
+  weight: ['300', '400', '500', '600', '700'],
   display: 'swap',
 });
 
@@ -148,10 +148,10 @@ export default async function RootLayout({
           }} 
         />
       </head>
-      <body className={`${playfair.variable} ${inter.variable} font-sans antialiased`} suppressHydrationWarning>
+      <body className={`${cormorant.variable} ${inter.variable} font-sans antialiased`} suppressHydrationWarning>
         <ThemeProvider>
           <NextIntlClientProvider messages={messages}>
-            <div className="min-h-screen flex flex-col architectural-pattern" style={{ backgroundColor: '#0B0D0F' }}>
+            <div className="min-h-screen flex flex-col" style={{ backgroundColor: '#F5EFE6' }}>
               <Header />
               <main className="flex-1 pt-20">
                 {children}

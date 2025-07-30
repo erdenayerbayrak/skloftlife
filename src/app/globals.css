@@ -4,15 +4,16 @@
 
 @layer base {
   :root {
-    /* Premium Architectural Light Theme */
-    --bg: 0 0% 98%;
-    --surface: 0 0% 95%;
-    --text: 0 0% 10%;
-    --text-muted: 0 0% 40%;
-    --border: 0 0% 85%;
-    --accent: 35 55% 45%;
-    --accent-2: 35 45% 35%;
-    --overlay: rgba(255, 255, 255, 0.85);
+    /* Luxury Residential Light Theme */
+    --bg: 40 18% 92%; /* #F5EFE6 - soft beige */
+    --surface: 0 0% 100%; /* #FFFFFF */
+    --text: 0 0% 11%; /* #1B1B1B */
+    --text-muted: 0 0% 42%; /* #6A6A6A */
+    --border: 39 15% 89%; /* #E7E2DA */
+    --accent: 35 22% 64%; /* #BFA98B - beige-gold */
+    --accent-2: 33 25% 62%; /* #C7A77B */
+    --dark-strip: 0 0% 7%; /* #111112 */
+    --overlay: rgba(245, 239, 230, 0.65);
     
     /* Legacy compatibility */
     --background: var(--bg);
@@ -95,25 +96,25 @@
   }
   
   h1 {
-    font-family: var(--font-playfair), serif;
-    font-size: clamp(40px, 6vw, 88px);
-    @apply font-bold leading-tight tracking-[0.02em] uppercase;
+    font-family: var(--font-cormorant), serif;
+    font-size: clamp(42px, 6.5vw, 96px);
+    @apply font-medium leading-tight tracking-[0.02em];
   }
   
   h2 {
-    font-family: var(--font-playfair), serif;
-    font-size: clamp(28px, 3.6vw, 48px);
-    @apply font-bold leading-tight tracking-[0.02em];
+    font-family: var(--font-cormorant), serif;
+    font-size: clamp(32px, 4vw, 56px);
+    @apply font-medium leading-tight tracking-[0.01em];
   }
   
   h3 {
-    font-family: var(--font-playfair), serif;
-    @apply text-2xl sm:text-3xl lg:text-4xl font-bold tracking-wide;
+    font-family: var(--font-cormorant), serif;
+    @apply text-2xl sm:text-3xl lg:text-4xl font-medium tracking-wide;
   }
   
   h4 {
-    font-family: var(--font-playfair), serif;
-    @apply text-xl sm:text-2xl lg:text-3xl font-semibold tracking-wide;
+    font-family: var(--font-cormorant), serif;
+    @apply text-xl sm:text-2xl lg:text-3xl font-medium tracking-wide;
   }
   
   h5 {
@@ -155,31 +156,31 @@
     @apply mx-auto px-6 sm:px-8 lg:px-12 max-w-[1400px];
   }
   
-  /* Premium Buttons */
+  /* Luxury Light Theme Buttons */
   .btn-primary {
-    @apply px-8 py-4 rounded-xl font-medium transform transition-all duration-300;
+    @apply px-8 py-4 rounded-lg font-medium transition-all duration-150;
     background: hsl(var(--accent));
-    color: hsl(var(--bg));
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    color: white;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
   }
   
   .btn-primary:hover {
     filter: brightness(1.1);
-    @apply scale-[1.02];
-    box-shadow: var(--shadow-gold);
+    @apply translate-y-[-1px];
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
   }
   
   .btn-secondary {
-    @apply px-8 py-4 rounded-xl font-medium transform transition-all duration-300;
+    @apply px-8 py-4 rounded-lg font-medium transition-all duration-150;
     background: transparent;
-    color: hsl(var(--accent));
-    border: 1px solid hsl(var(--accent));
+    color: hsl(var(--text));
+    border: 1px solid hsl(var(--text));
   }
   
   .btn-secondary:hover {
-    background: hsl(var(--accent));
-    color: hsl(var(--bg));
-    @apply scale-[1.02];
+    background: hsl(var(--text));
+    color: white;
+    @apply translate-y-[-1px];
   }
   
   /* Premium Glass Morphism */
@@ -194,21 +195,27 @@
     border-color: rgba(255, 255, 255, 0.1);
   }
   
-  /* Premium Card Glass */
-  .glass-card {
-    @apply backdrop-blur-[12px] rounded-2xl border p-6 lg:p-8 transition-all duration-300;
-    background: rgba(255, 255, 255, 0.04);
-    border-color: rgba(255, 255, 255, 0.1);
+  /* Luxury Light Theme Cards */
+  .luxury-card {
+    @apply rounded-2xl border p-6 lg:p-8 transition-all duration-300;
+    background: hsl(var(--surface));
+    border-color: hsl(var(--border));
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
   }
   
-  .glass-card:hover {
-    @apply -translate-y-1;
-    background: rgba(255, 255, 255, 0.06);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+  .luxury-card:hover {
+    @apply -translate-y-[2px] scale-[1.01];
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
   }
   
-  .dark .glass-card:hover {
-    box-shadow: var(--shadow-gold);
+  /* Container for 8px rhythm */
+  .luxury-container {
+    @apply mx-auto px-6 sm:px-8 lg:px-12 max-w-7xl;
+  }
+  
+  /* Luxury spacing */
+  .luxury-section {
+    @apply py-24 md:py-28 xl:py-32;
   }
   
   /* Architectural Textures */

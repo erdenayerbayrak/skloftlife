@@ -46,8 +46,8 @@ export function Header() {
       className={cn(
         'fixed top-0 z-50 w-full transition-all duration-500',
         isScrolled 
-          ? 'backdrop-blur-[20px] bg-[#0B0D0F]/70 border-b border-[#1F2733]/50 shadow-2xl' 
-          : 'bg-transparent'
+          ? 'backdrop-blur-[20px] bg-white/80 border-b border-[#E7E2DA] shadow-lg' 
+          : 'bg-white/80 backdrop-blur-[20px]'
       )}
     >
       <div className="container flex h-20 items-center justify-between">
@@ -65,8 +65,8 @@ export function Header() {
               className={cn(
                 'relative py-2 text-base lg:text-lg font-medium tracking-wide transition-all duration-300',
                 pathname === item.href
-                  ? 'text-[#C9A36B]'
-                  : 'text-white/90 hover:text-[#C9A36B]'
+                  ? 'text-[#1B1B1B] border-b-2 border-[#BFA98B]'
+                  : 'text-[#1B1B1B]/80 hover:text-[#BFA98B]'
               )}
             >
               {t(item.name)}
