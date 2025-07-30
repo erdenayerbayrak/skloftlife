@@ -99,20 +99,26 @@ export default function GalleryPage() {
 
   return (
     <div className="min-h-screen">
-      {/* Header Section - Black Marble */}
-      <section className="py-6 relative black-marble-background">
-        <div className="absolute inset-0 black-marble-overlay"></div>
-        <div className="container mx-auto py-4 px-4 relative z-10">
+      {/* Header Section - Premium Marble */}
+      <section 
+        className="py-6 marble-hero-section light-marble-background"
+        style={{
+          background: 'linear-gradient(135deg, #0A0A0A 0%, #1A1A1A 20%, #141414 40%, #1F1F1F 60%, #0F0F0F 80%, #121212 100%)',
+          position: 'relative'
+        }}
+      >
+        <div className="absolute inset-0 light-marble-overlay"></div>
+        <div className="container mx-auto py-4 px-4 marble-hero-content">
           <div className="max-w-7xl mx-auto text-center mb-4 space-y-2">
           <div className="flex items-center justify-center gap-4">
-            <div className="w-16 h-px bg-gradient-to-r from-transparent to-yellow-400" />
-            <span className="text-sm font-medium text-yellow-400 uppercase tracking-wider">
+            <div className="w-16 h-px bg-gradient-to-r from-transparent to-white/60" />
+            <span className="text-sm font-medium text-white uppercase tracking-wider">
               Visual Collection
             </span>
-            <div className="w-16 h-px bg-gradient-to-r from-yellow-400 to-transparent" />
+            <div className="w-16 h-px bg-gradient-to-r from-white/60 to-transparent" />
           </div>
           
-          <h1 className="text-2xl md:text-3xl font-bold tracking-tight text-white" style={{textShadow: '2px 2px 8px rgba(0,0,0,0.8)'}}>
+          <h1 className="text-2xl md:text-3xl font-bold tracking-tight marble-title text-white" style={{textShadow: '2px 2px 8px rgba(0,0,0,0.8)'}}>
             {t('title')}
           </h1>
           

@@ -52,24 +52,30 @@ export default function ContactPage() {
 
   return (
     <div className="min-h-screen">
-      {/* Header Section - Architectural Marble */}
-      <section className="py-6 relative architectural-marble-background">
-        <div className="absolute inset-0 architectural-marble-overlay"></div>
-        <div className="container mx-auto py-4 px-4 relative z-10">
+      {/* Header Section - Premium Marble */}
+      <section 
+        className="py-6 marble-hero-section light-marble-background"
+        style={{
+          background: 'linear-gradient(135deg, #0A0A0A 0%, #1A1A1A 20%, #141414 40%, #1F1F1F 60%, #0F0F0F 80%, #121212 100%)',
+          position: 'relative'
+        }}
+      >
+        <div className="absolute inset-0 light-marble-overlay"></div>
+        <div className="container mx-auto py-4 px-4 marble-hero-content">
           <div className="max-w-7xl mx-auto text-center mb-4 space-y-2">
           <div className="flex items-center justify-center gap-4">
-            <div className="w-16 h-px bg-gradient-to-r from-transparent to-primary" />
-            <span className="text-sm font-medium text-primary uppercase tracking-wider">
+            <div className="w-16 h-px bg-gradient-to-r from-transparent to-white/60" />
+            <span className="text-sm font-medium text-white uppercase tracking-wider">
               {t('sectionLabel')}
             </span>
-            <div className="w-16 h-px bg-gradient-to-r from-primary to-transparent" />
+            <div className="w-16 h-px bg-gradient-to-r from-white/60 to-transparent" />
           </div>
           
-          <h1 className="text-2xl md:text-3xl font-bold tracking-tight bg-gradient-to-r from-foreground via-primary to-accent bg-clip-text text-transparent">
+          <h1 className="text-2xl md:text-3xl font-bold tracking-tight marble-title text-white" style={{textShadow: '2px 2px 8px rgba(0,0,0,0.8)'}}>
             {t('title')}
           </h1>
           
-          <p className="text-base text-muted-foreground max-w-xl mx-auto">
+          <p className="text-base text-gray-200 max-w-xl mx-auto" style={{textShadow: '1px 1px 4px rgba(0,0,0,0.7)'}}>
             {t('description')}
           </p>
           </div>

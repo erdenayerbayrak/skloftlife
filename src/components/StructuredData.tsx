@@ -118,7 +118,7 @@ export function StructuredData({ type, data }: StructuredDataProps) {
     description: realEstateData.description || "Premium luxury villas with modern architecture and premium amenities.",
     url: realEstateData.url || "https://skloftlife-villas.com",
     image: realEstateData.images || [
-      "https://skloftlife-villas.com/images/gallery/3D DIŞ GÖRSEL/sk-villacamera1.jpg"
+      "https://skloftlife-villas.com/images/gallery/3D DIŞ GÖRSEL/sk-villacamera1 kopyası.jpg"
     ],
     propertyType: realEstateData.propertyType || "House",
     numberOfRooms: realEstateData.rooms || "3-5",

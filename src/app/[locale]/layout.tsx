@@ -63,7 +63,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
       siteName: 'SkLoftLife Villas',
       images: [
         {
-          url: '/images/gallery/3D DIŞ GÖRSEL/sk-villacamera1.jpg',
+          url: '/images/gallery/3D DIŞ GÖRSEL/sk-villacamera1 kopyası.jpg',
           width: 1200,
           height: 630,
           alt: 'SkLoftLife Luxury Villas',
@@ -76,7 +76,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
       card: 'summary_large_image',
       title: messages.metadata?.title || 'SkLoftLife Villas',
       description: messages.metadata?.description || 'Luxury villa living',
-      images: ['/images/gallery/3D DIŞ GÖRSEL/sk-villacamera1.jpg'],
+      images: ['/images/gallery/3D DIŞ GÖRSEL/sk-villacamera1 kopyası.jpg'],
     },
     robots: {
       index: true,
@@ -155,8 +155,8 @@ export default async function RootLayout({
             description: "Premium luxury villas with modern architecture and premium amenities.",
             url: "https://skloftlife-villas.com",
             images: [
-              "https://skloftlife-villas.com/images/gallery/3D DIŞ GÖRSEL/sk-villacamera1.jpg",
-              "https://skloftlife-villas.com/images/gallery/3D DIŞ GÖRSEL/sk-villacamera2.jpg"
+              "https://skloftlife-villas.com/images/gallery/3D DIŞ GÖRSEL/sk-villacamera1 kopyası.jpg",
+              "https://skloftlife-villas.com/images/gallery/3D DIŞ GÖRSEL/sk-villacamera2 kopyası.jpg"
             ],
             rooms: "3-5",
             size: 300

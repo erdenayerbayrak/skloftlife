@@ -36,10 +36,9 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Luxury About Section - Subtle Cream Accent */}
-      <section className="py-16 md:py-20 relative cream-marble-background">
-        <div className="absolute inset-0 cream-marble-overlay opacity-30"></div>
-        <div className="container relative z-10">
+      {/* Luxury About Section */}
+      <section className="py-16 md:py-20">
+        <div className="container">
           <div className="grid grid-cols-12 gap-8 lg:gap-12 items-center">
             <div className="col-span-12 lg:col-span-6 space-y-6">
               <div className="space-y-4">
