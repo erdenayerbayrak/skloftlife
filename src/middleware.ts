@@ -14,8 +14,7 @@ export const config = {
     // Match all pathnames except for
     // - … if they start with `/api`, `/_next` or `/_vercel`
     // - … the ones containing a dot (e.g. `favicon.ico`)
-    '/((?!api|_next|_vercel|.*\\..*).*)',
-    // However, match all pathnames within `/[locale]`, optionally with a trailing `/`
-    '/([\\w-]+)?/(.+)?'
+    // - … static files in public folder
+    '/((?!api|_next|_vercel|images|favicon.ico|robots.txt|.*\\..*).*)'
   ],
 };

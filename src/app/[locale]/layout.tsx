@@ -14,15 +14,17 @@ import "../globals.css";
 const cormorant = Cormorant_Garamond({
   subsets: ["latin"],
   variable: "--font-cormorant",
-  weight: ['300', '400', '500', '600', '700'],
+  weight: ['400', '500', '600'], // Reduce font variants for faster loading
   display: 'swap',
+  preload: true,
 });
 
 const inter = Inter({
   subsets: ["latin"],
   variable: "--font-inter",
-  weight: ['300', '400', '500', '600', '700'],
+  weight: ['400', '500', '600'], // Reduce font variants for faster loading
   display: 'swap',
+  preload: true,
 });
 
 export function generateStaticParams() {
@@ -109,6 +111,19 @@ export default async function RootLayout({
   return (
     <html lang={locale} suppressHydrationWarning>
       <head>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              try {
+                const theme = localStorage.getItem('theme') || 
+                  (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+                document.documentElement.classList.add(theme);
+              } catch (e) {
+                document.documentElement.classList.add('light');
+              }
+            `,
+          }}
+        />
         <StructuredData 
           type="organization" 
           data={{

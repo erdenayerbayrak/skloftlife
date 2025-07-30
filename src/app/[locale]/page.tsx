@@ -1,60 +1,37 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { useTranslations } from 'next-intl';
 import { Link } from '@/navigation';
-import { Interactive360Viewer } from '@/components/Interactive360Viewer';
 import { WatermarkedImage } from '@/components/ui/WatermarkedImage';
+import { Hero360Viewer } from '@/components/Hero360Viewer';
 
 export default function HomePage() {
   const t = useTranslations();
-  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
-  const [isLoaded, setIsLoaded] = useState(false);
-  const [use360Viewer, setUse360Viewer] = useState(false);
-
-  useEffect(() => {
-    setIsLoaded(true);
-  }, []);
-
-  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
-    const { clientX, clientY } = e;
-    const { innerWidth, innerHeight } = window;
-    const x = (clientX / innerWidth - 0.5) * 20;
-    const y = (clientY / innerHeight - 0.5) * 20;
-    setMousePosition({ x, y });
-  };
+  
+  // 360 Viewer configuration - easily changeable
+  const [viewer360Config] = useState({
+    enabled: false, // Set to true when you have the 360 image
+    imagePath: '', // Add your 360 image path here
+    autoRotate: true,
+    controlsVisible: true
+  });
 
   return (
     <div className="min-h-screen">
-      {/* Clean Text-Only Hero Section */}
-      <section className="min-h-screen flex items-center bg-background">
-        <div className="luxury-container">
-          <div className="grid grid-cols-12 gap-8 items-center min-h-screen">
-            <div 
-              className={`col-span-12 lg:col-span-8 xl:col-span-6 space-y-12 transition-all duration-1500 ${
-                isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'
-              }`}
-            >
-              <div className="space-y-8">
-                <h1 className="text-foreground leading-[0.9]">
-                  {t('hero.title')}
-                </h1>
-                
-                <p className="text-xl text-muted-foreground max-w-2xl leading-relaxed">
-                  {t('hero.subtitle')}
-                </p>
-              </div>
-
-              <div className="flex flex-col sm:flex-row gap-6">
-                <Link href="/gallery" className="btn-primary">
-                  {t('hero.cta')}
-                </Link>
-                
-                <Link href="/about" className="btn-secondary">
-                  {t('hero.learnMore')}
-                </Link>
-              </div>
-            </div>
+      {/* Hero Section - 360 Viewer Container */}
+      <section className="h-screen bg-background">
+        <div className="w-full h-full flex items-center justify-center p-4">
+          <div 
+            id="hero-360-viewer" 
+            className="w-full h-full max-w-7xl mx-auto rounded-2xl bg-card border border-border shadow-2xl overflow-hidden relative"
+          >
+            <Hero360Viewer 
+              enabled={viewer360Config.enabled}
+              imagePath={viewer360Config.imagePath}
+              autoRotate={viewer360Config.autoRotate}
+              controlsVisible={viewer360Config.controlsVisible}
+            />
           </div>
         </div>
       </section>
@@ -94,13 +71,15 @@ export default function HomePage() {
 
             <div className="col-span-12 lg:col-span-6 lg:col-start-7">
               <div className="luxury-card">
-                <div className="aspect-[4/5] rounded-xl overflow-hidden">
+                <div className="aspect-[4/5] rounded-xl overflow-hidden relative">
                   <WatermarkedImage
                     src="/images/gallery/İÇ MEKAN/skvillasaloncamera1.jpg"
                     alt="Luxury Villa Interior"
                     fill
                     sizes="(max-width: 768px) 100vw, 50vw"
                     className="object-cover"
+                    priority={true}
+                    quality={80}
                     watermarkClassName="opacity-5"
                   />
                 </div>
@@ -110,15 +89,17 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Dark Strip Section (Halton Style) */}
-      <section className="py-32 relative bg-dark-strip">
-        <div className="luxury-container">
+      {/* Marble Luxury Section */}
+      <section className="py-32 relative marble-background">
+        {/* Marble overlay for luxury feel */}
+        <div className="absolute inset-0 marble-overlay"></div>
+        <div className="luxury-container relative z-10">
           <div className="text-center mb-16 space-y-6">
-            <h2 className="text-white">
-              <span className="text-accent">LUXURY</span> LIVING
+            <h2 className="text-white font-bold" style={{textShadow: '2px 2px 8px rgba(0,0,0,0.8)'}}>
+              <span className="text-accent font-bold">LÜKS</span> YAŞAM
             </h2>
             
-            <p className="text-lg text-white/80 max-w-2xl mx-auto">
+            <p className="text-lg text-white max-w-2xl mx-auto font-medium" style={{textShadow: '1px 1px 6px rgba(0,0,0,0.7)'}}>
               {t('projects.description')}
             </p>
           </div>
@@ -127,26 +108,26 @@ export default function HomePage() {
             {[
               {
                 icon: "🏗️",
-                title: "Modern Architecture",
-                description: "Contemporary design meets timeless elegance"
+                title: "Modern Mimari",
+                description: "Çağdaş tasarım ve zamansız zarafet"
               },
               {
                 icon: "🌟",
-                title: "Premium Materials",
-                description: "Only the finest finishes and fixtures"
+                title: "Premium Malzemeler",
+                description: "Sadece en kaliteli malzeme ve dokunuşlar"
               },
               {
                 icon: "🏡",
-                title: "Exclusive Location",
-                description: "Prime position with stunning views"
+                title: "Özel Konum",
+                description: "Muhteşem manzaralı birinci sınıf lokasyon"
               }
             ].map((feature, i) => (
               <div key={i} className="text-center space-y-4">
                 <div className="text-4xl mb-4">{feature.icon}</div>
-                <h3 className="text-xl font-medium text-white font-cormorant">
+                <h3 className="text-xl font-semibold text-white font-cormorant" style={{textShadow: '1px 1px 4px rgba(0,0,0,0.8)'}}>
                   {feature.title}
                 </h3>
-                <p className="text-white/70">
+                <p className="text-white font-medium" style={{textShadow: '1px 1px 3px rgba(0,0,0,0.7)'}}>
                   {feature.description}
                 </p>
               </div>
@@ -194,13 +175,15 @@ export default function HomePage() {
               }
             ].map((project, i) => (
               <div key={i} className="luxury-card group">
-                <div className="aspect-[4/5] rounded-xl overflow-hidden mb-6">
+                <div className="aspect-[4/5] rounded-xl overflow-hidden mb-6 relative">
                   <WatermarkedImage
                     src={project.image}
                     alt={project.title}
                     fill
                     sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
                     className="object-cover transition-transform duration-700 group-hover:scale-105"
+                    priority={i === 0} // Priority for first image only
+                    quality={80}
                     watermarkClassName="opacity-5"
                   />
                 </div>

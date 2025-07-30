@@ -5,9 +5,9 @@ const withNextIntl = createNextIntlPlugin('./src/i18n/request.ts');
 
 const nextConfig: NextConfig = {
   // output: 'export', // Removed for middleware support
-  trailingSlash: true,
+  trailingSlash: false, // Fix routing issues
   images: {
-    unoptimized: true,
+    unoptimized: false, // Enable Next.js image optimization
     formats: ['image/avif', 'image/webp'],
     deviceSizes: [640, 750, 828, 1080, 1200, 1920, 2048, 3840],
     imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
@@ -30,6 +30,8 @@ const nextConfig: NextConfig = {
   reactStrictMode: true,
   experimental: {
     gzipSize: true,
+    optimizeCss: true,
+    optimizePackageImports: ['@react-three/fiber', '@react-three/drei', 'three'],
   },
   compiler: {
     removeConsole: process.env.NODE_ENV === 'production',

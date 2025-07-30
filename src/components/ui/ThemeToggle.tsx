@@ -1,14 +1,9 @@
 'use client';
 
 import { useTheme } from '@/components/providers/ThemeProvider';
-import { useEffect, useState } from 'react';
 
 export function ThemeToggle() {
-  const [mounted, setMounted] = useState(false);
-
-  useEffect(() => {
-    setMounted(true);
-  }, []);
+  const { theme, toggleTheme, mounted } = useTheme();
 
   if (!mounted) {
     return (
@@ -17,12 +12,6 @@ export function ThemeToggle() {
       </div>
     );
   }
-
-  return <ThemeToggleContent />;
-}
-
-function ThemeToggleContent() {
-  const { theme, toggleTheme } = useTheme();
 
   return (
     <button

@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useMemo } from 'react';
 import { useTranslations } from 'next-intl';
 import { cn } from '@/lib/utils';
 import { WatermarkedImage } from '@/components/ui/WatermarkedImage';
@@ -75,9 +75,13 @@ export default function GalleryPage() {
   const [selectedCategory, setSelectedCategory] = useState('all');
   const [selectedImage, setSelectedImage] = useState<number | null>(null);
 
-  const filteredImages = selectedCategory === 'all' 
-    ? galleryImages 
-    : galleryImages.filter(img => img.category === selectedCategory);
+  // Optimize filtering with useMemo to prevent unnecessary re-renders
+  const filteredImages = useMemo(() => 
+    selectedCategory === 'all' 
+      ? galleryImages 
+      : galleryImages.filter(img => img.category === selectedCategory),
+    [selectedCategory]
+  );
 
   const handlePrevious = () => {
     if (selectedImage === null) return;
@@ -153,6 +157,8 @@ export default function GalleryPage() {
                 fill
                 className="object-cover transition-transform duration-700 group-hover:scale-110"
                 sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, (max-width: 1280px) 33vw, 25vw"
+                loading={index < 8 ? 'eager' : 'lazy'} // Load first 8 images immediately
+                quality={75} // Reduce quality for faster loading
                 watermarkClassName="opacity-30"
               />
               

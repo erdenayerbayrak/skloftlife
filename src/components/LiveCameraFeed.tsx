@@ -21,9 +21,10 @@ export function LiveCameraFeed({
   const [isFullscreen, setIsFullscreen] = useState(false);
 
   useEffect(() => {
+    // Reduce update frequency to improve performance
     const timer = setInterval(() => {
       setCurrentTime(new Date());
-    }, 1000);
+    }, 30000); // Update every 30 seconds instead of every second
 
     return () => clearInterval(timer);
   }, []);
