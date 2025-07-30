@@ -69,20 +69,20 @@ export function Footer() {
               <Link href="/" className="inline-block group">
                 <Logo size="sm" className="group-hover:scale-105 transition-transform duration-300" />
               </Link>
-              <p className="text-sm text-muted-foreground leading-relaxed">
+              <p className="text-base lg:text-lg text-muted-foreground leading-relaxed">
                 {t('footer.companySlogan')}
               </p>
             </div>
 
             {/* Quick Links */}
             <div className="space-y-3">
-              <h4 className="text-sm font-semibold text-foreground">{t('footer.quickLinks')}</h4>
+              <h4 className="text-base lg:text-lg font-semibold text-foreground">{t('footer.quickLinks')}</h4>
               <nav className="space-y-2">
                 {navigation.slice(0, 3).map((item) => (
                   <Link
                     key={item.name}
                     href={item.href}
-                    className="block text-sm text-muted-foreground hover:text-primary transition-colors duration-200"
+                    className="block text-base lg:text-lg text-muted-foreground hover:text-primary transition-colors duration-200"
                   >
                     {t(`navigation.${item.name}`)}
                   </Link>
@@ -92,13 +92,13 @@ export function Footer() {
 
             {/* More Links */}
             <div className="space-y-3">
-              <h4 className="text-sm font-semibold text-foreground">{t('footer.explore')}</h4>
+              <h4 className="text-base lg:text-lg font-semibold text-foreground">{t('footer.explore')}</h4>
               <nav className="space-y-2">
                 {navigation.slice(3).map((item) => (
                   <Link
                     key={item.name}
                     href={item.href}
-                    className="block text-sm text-muted-foreground hover:text-primary transition-colors duration-200"
+                    className="block text-base lg:text-lg text-muted-foreground hover:text-primary transition-colors duration-200"
                   >
                     {t(`navigation.${item.name}`)}
                   </Link>
@@ -108,12 +108,12 @@ export function Footer() {
 
             {/* Contact & Social */}
             <div className="space-y-3">
-              <h4 className="text-sm font-semibold text-foreground">{t('footer.contactTitle')}</h4>
+              <h4 className="text-base lg:text-lg font-semibold text-foreground">{t('footer.contactTitle')}</h4>
               <div className="space-y-2">
-                <a href={`tel:${t('contact.info.phone')}`} className="block text-sm text-muted-foreground hover:text-primary transition-colors duration-200">
+                <a href={`tel:${t('contact.info.phone')}`} className="block text-base lg:text-lg text-muted-foreground hover:text-primary transition-colors duration-200">
                   {t('contact.info.phone')}
                 </a>
-                <a href={`mailto:${t('contact.info.email')}`} className="block text-sm text-muted-foreground hover:text-primary transition-colors duration-200">
+                <a href={`mailto:${t('contact.info.email')}`} className="block text-base lg:text-lg text-muted-foreground hover:text-primary transition-colors duration-200">
                   {t('contact.info.email')}
                 </a>
               </div>
@@ -138,19 +138,19 @@ export function Footer() {
 
           {/* Bottom Bar - Compact */}
           <div className="mt-6 pt-4 border-t border-border/30 flex flex-col sm:flex-row justify-between items-center gap-2">
-            <p className="text-xs text-muted-foreground">
+            <p className="text-sm lg:text-base text-muted-foreground">
               &copy; {currentYear} SkLoftLife Villas. {t('footer.rights')}
             </p>
             <div className="flex items-center space-x-4">
               <Link 
                 href="/privacy" 
-                className="text-xs text-muted-foreground hover:text-primary transition-colors duration-200"
+                className="text-sm lg:text-base text-muted-foreground hover:text-primary transition-colors duration-200"
               >
                 {t('footer.privacy')}
               </Link>
               <Link 
                 href="/terms" 
-                className="text-xs text-muted-foreground hover:text-primary transition-colors duration-200"
+                className="text-sm lg:text-base text-muted-foreground hover:text-primary transition-colors duration-200"
               >
                 {t('footer.terms')}
               </Link>

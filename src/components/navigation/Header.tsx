@@ -63,7 +63,7 @@ export function Header() {
               key={item.name}
               href={item.href}
               className={cn(
-                'relative py-2 text-sm font-medium tracking-wide transition-all duration-300',
+                'relative py-2 text-base lg:text-lg font-medium tracking-wide transition-all duration-300',
                 pathname === item.href
                   ? 'text-primary'
                   : 'text-foreground/80 hover:text-primary'
@@ -126,7 +126,7 @@ export function Header() {
               key={item.name}
               href={item.href}
               className={cn(
-                'block px-4 py-3 rounded-xl transition-all duration-300 animate-luxury-fade-in',
+                'block px-4 py-3 rounded-xl text-lg font-medium transition-all duration-300 animate-luxury-fade-in',
                 pathname === item.href
                   ? 'bg-primary text-primary-foreground'
                   : 'hover:bg-muted'
