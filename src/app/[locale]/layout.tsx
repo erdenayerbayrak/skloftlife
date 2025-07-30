@@ -151,7 +151,7 @@ export default async function RootLayout({
       <body className={`${cormorant.variable} ${inter.variable} font-sans antialiased`} suppressHydrationWarning>
         <ThemeProvider>
           <NextIntlClientProvider messages={messages}>
-            <div className="min-h-screen flex flex-col" style={{ backgroundColor: '#F5EFE6' }}>
+            <div className="min-h-screen flex flex-col bg-background">
               <Header />
               <main className="flex-1 pt-20">
                 {children}

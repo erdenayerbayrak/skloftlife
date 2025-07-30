@@ -51,6 +51,7 @@
     --border: 216 26% 16%; /* #1F2733 */
     --accent: 33 43% 60%; /* #C9A36B */
     --accent-2: 33 23% 45%; /* #8F7B5A */
+    --dark-strip: 0 0% 3%; /* Even darker for dark mode */
     --overlay: rgba(0, 0, 0, 0.65);
     
     /* Legacy compatibility */
@@ -156,31 +157,27 @@
     @apply mx-auto px-6 sm:px-8 lg:px-12 max-w-[1400px];
   }
   
-  /* Luxury Light Theme Buttons */
+  /* Theme-Aware Buttons */
   .btn-primary {
-    @apply px-8 py-4 rounded-lg font-medium transition-all duration-150;
-    background: hsl(var(--accent));
-    color: white;
+    @apply px-8 py-4 rounded-lg font-medium transition-all duration-150 bg-accent text-primary-foreground;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
   }
   
   .btn-primary:hover {
     filter: brightness(1.1);
     @apply translate-y-[-1px];
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+  }
+  
+  .dark .btn-primary {
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
   }
   
   .btn-secondary {
-    @apply px-8 py-4 rounded-lg font-medium transition-all duration-150;
-    background: transparent;
-    color: hsl(var(--text));
-    border: 1px solid hsl(var(--text));
+    @apply px-8 py-4 rounded-lg font-medium transition-all duration-150 bg-transparent text-foreground border border-foreground;
   }
   
   .btn-secondary:hover {
-    background: hsl(var(--text));
-    color: white;
-    @apply translate-y-[-1px];
+    @apply bg-foreground text-background translate-y-[-1px];
   }
   
   /* Premium Glass Morphism */
@@ -195,17 +192,23 @@
     border-color: rgba(255, 255, 255, 0.1);
   }
   
-  /* Luxury Light Theme Cards */
+  /* Theme-Aware Cards */
   .luxury-card {
-    @apply rounded-2xl border p-6 lg:p-8 transition-all duration-300;
-    background: hsl(var(--surface));
-    border-color: hsl(var(--border));
+    @apply rounded-2xl border border-border bg-surface p-6 lg:p-8 transition-all duration-300;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
   }
   
   .luxury-card:hover {
     @apply -translate-y-[2px] scale-[1.01];
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+  }
+  
+  .dark .luxury-card {
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+  }
+  
+  .dark .luxury-card:hover {
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
   }
   
   /* Container for 8px rhythm */

@@ -26,46 +26,26 @@ export default function HomePage() {
 
   return (
     <div className="min-h-screen">
-      {/* Luxury Light Hero Section */}
-      <section className="relative min-h-screen flex items-center">
-        {/* Background Image */}
-        <div className="absolute inset-0 z-0">
-          <WatermarkedImage
-            src="/images/gallery/3D DIŞ GÖRSEL/sk-villacamera1 kopyası.jpg"
-            alt="SkLoftLife Luxury Villa"
-            fill
-            className="object-cover"
-            priority
-            watermarkClassName="opacity-10"
-          />
-          {/* Light gradient overlay */}
-          <div 
-            className="absolute inset-0"
-            style={{
-              background: 'linear-gradient(180deg, rgba(255,255,255,0) 0%, rgba(245,239,230,0.65) 100%)'
-            }}
-          />
-        </div>
-
-        {/* Hero Content */}
-        <div className="relative z-10 luxury-container">
+      {/* Clean Text-Only Hero Section */}
+      <section className="min-h-screen flex items-center bg-background">
+        <div className="luxury-container">
           <div className="grid grid-cols-12 gap-8 items-center min-h-screen">
             <div 
-              className={`col-span-12 lg:col-span-6 space-y-8 transition-all duration-1500 ${
+              className={`col-span-12 lg:col-span-8 xl:col-span-6 space-y-12 transition-all duration-1500 ${
                 isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'
               }`}
             >
-              <div className="space-y-6">
-                <h1 className="text-[#1B1B1B] leading-[0.9]">
+              <div className="space-y-8">
+                <h1 className="text-foreground leading-[0.9]">
                   {t('hero.title')}
                 </h1>
                 
-                <p className="text-xl text-[#6A6A6A] max-w-lg leading-relaxed">
+                <p className="text-xl text-muted-foreground max-w-2xl leading-relaxed">
                   {t('hero.subtitle')}
                 </p>
               </div>
 
-              <div className="flex flex-col sm:flex-row gap-4">
+              <div className="flex flex-col sm:flex-row gap-6">
                 <Link href="/gallery" className="btn-primary">
                   {t('hero.cta')}
                 </Link>
@@ -86,24 +66,24 @@ export default function HomePage() {
             <div className="col-span-12 lg:col-span-5 space-y-8">
               <div className="space-y-6">
                 <div className="flex items-center gap-4">
-                  <div className="w-16 h-px bg-[#BFA98B]" />
-                  <span className="text-sm font-medium text-[#BFA98B] uppercase tracking-wider">
+                  <div className="w-16 h-px bg-accent" />
+                  <span className="text-sm font-medium text-accent uppercase tracking-wider">
                     {t('about.sectionLabel')}
                   </span>
                 </div>
                 
-                <h2 className="text-[#1B1B1B]">
+                <h2 className="text-foreground">
                   {t('about.title')}
                 </h2>
                 
-                <p className="text-lg text-[#6A6A6A] leading-relaxed">
+                <p className="text-lg text-muted-foreground leading-relaxed">
                   {t('about.description')}
                 </p>
               </div>
 
               <Link
                 href="/about"
-                className="inline-flex items-center gap-3 text-[#1B1B1B] hover:gap-6 transition-all duration-300 font-medium group underline underline-offset-4"
+                className="inline-flex items-center gap-3 text-foreground hover:gap-6 transition-all duration-300 font-medium group underline underline-offset-4"
               >
                 {t('about.discoverVision')}
                 <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -131,11 +111,11 @@ export default function HomePage() {
       </section>
 
       {/* Dark Strip Section (Halton Style) */}
-      <section className="py-32 relative" style={{ backgroundColor: '#111112' }}>
+      <section className="py-32 relative bg-dark-strip">
         <div className="luxury-container">
           <div className="text-center mb-16 space-y-6">
             <h2 className="text-white">
-              <span className="text-[#BFA98B]">LUXURY</span> LIVING
+              <span className="text-accent">LUXURY</span> LIVING
             </h2>
             
             <p className="text-lg text-white/80 max-w-2xl mx-auto">
@@ -180,14 +160,14 @@ export default function HomePage() {
         <div className="luxury-container">
           <div className="text-center mb-16 space-y-4">
             <div className="flex items-center justify-center gap-4">
-              <div className="w-16 h-px bg-[#BFA98B]" />
-              <span className="text-sm font-medium text-[#BFA98B] uppercase tracking-wider">
+              <div className="w-16 h-px bg-accent" />
+              <span className="text-sm font-medium text-accent uppercase tracking-wider">
                 {t('projects.sectionLabel')}
               </span>
-              <div className="w-16 h-px bg-[#BFA98B]" />
+              <div className="w-16 h-px bg-accent" />
             </div>
             
-            <h2 className="text-[#1B1B1B]">
+            <h2 className="text-foreground">
               {t('projects.title')}
             </h2>
           </div>
@@ -226,15 +206,15 @@ export default function HomePage() {
                 </div>
                 
                 <div className="space-y-4">
-                  <h3 className="font-cormorant text-2xl font-medium text-[#1B1B1B]">
+                  <h3 className="font-cormorant text-2xl font-medium text-foreground">
                     {project.title}
                   </h3>
-                  <p className="text-[#6A6A6A]">
-                    <span className="text-[#BFA98B] font-semibold">{project.size} m²</span> • {project.description}
+                  <p className="text-muted-foreground">
+                    <span className="text-accent font-semibold">{project.size} m²</span> • {project.description}
                   </p>
                   <Link
                     href="/plans"
-                    className="inline-flex items-center gap-2 text-[#1B1B1B] hover:gap-4 transition-all duration-300 font-medium underline underline-offset-4"
+                    className="inline-flex items-center gap-2 text-foreground hover:gap-4 transition-all duration-300 font-medium underline underline-offset-4"
                   >
                     {t('projects.viewDetails')}
                     <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
