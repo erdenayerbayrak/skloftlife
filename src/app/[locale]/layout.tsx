@@ -151,7 +151,7 @@ export default async function RootLayout({
       <body className={`${playfair.variable} ${inter.variable} font-sans antialiased`} suppressHydrationWarning>
         <ThemeProvider>
           <NextIntlClientProvider messages={messages}>
-            <div className="min-h-screen flex flex-col bohemian-pattern luxury-gradient">
+            <div className="min-h-screen flex flex-col architectural-pattern" style={{ backgroundColor: '#0B0D0F' }}>
               <Header />
               <main className="flex-1 pt-20">
                 {children}

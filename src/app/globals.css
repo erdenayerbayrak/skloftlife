@@ -211,23 +211,37 @@
     box-shadow: var(--shadow-gold);
   }
   
-  /* Premium Gradients */
+  /* Architectural Textures */
   .luxury-gradient {
-    background: linear-gradient(180deg, 
-      rgba(0, 0, 0, 0.55) 0%, 
-      rgba(0, 0, 0, 0.78) 60%, 
-      rgba(0, 0, 0, 0.88) 100%);
+    background: 
+      linear-gradient(135deg, rgba(201, 163, 107, 0.03) 0%, transparent 20%),
+      linear-gradient(45deg, rgba(17, 20, 24, 0.8) 0%, rgba(11, 13, 15, 0.95) 100%),
+      radial-gradient(ellipse at center, rgba(201, 163, 107, 0.08) 0%, transparent 70%);
   }
   
   .accent-gradient {
-    background: radial-gradient(circle, 
-      rgba(201, 163, 107, 0.25) 0%, 
-      transparent 60%);
+    background: radial-gradient(circle at center, 
+      rgba(201, 163, 107, 0.15) 0%, 
+      rgba(201, 163, 107, 0.05) 40%,
+      transparent 70%);
   }
   
-  /* Remove bohemian pattern for cleaner dark theme */
-  .bohemian-pattern {
-    background: none;
+  /* Architectural Pattern */
+  .architectural-pattern {
+    background-image: 
+      linear-gradient(30deg, rgba(201, 163, 107, 0.02) 12%, transparent 12.5%, transparent 87%, rgba(201, 163, 107, 0.02) 87.5%, rgba(201, 163, 107, 0.02)),
+      linear-gradient(150deg, rgba(201, 163, 107, 0.02) 12%, transparent 12.5%, transparent 87%, rgba(201, 163, 107, 0.02) 87.5%, rgba(201, 163, 107, 0.02)),
+      linear-gradient(90deg, rgba(255, 255, 255, 0.01) 50%, transparent 50%);
+    background-size: 80px 140px, 80px 140px, 40px 40px;
+  }
+  
+  /* Stone texture overlay */
+  .stone-texture {
+    background-image: 
+      radial-gradient(circle at 20% 50%, rgba(255, 255, 255, 0.015) 0%, transparent 50%),
+      radial-gradient(circle at 80% 20%, rgba(201, 163, 107, 0.02) 0%, transparent 50%),
+      radial-gradient(circle at 40% 80%, rgba(255, 255, 255, 0.01) 0%, transparent 50%),
+      linear-gradient(180deg, rgba(17, 20, 24, 1) 0%, rgba(11, 13, 15, 1) 100%);
   }
 }
 

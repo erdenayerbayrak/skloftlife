@@ -26,99 +26,40 @@ export default function HomePage() {
 
   return (
     <div className="min-h-screen">
-      {/* Premium Hero Section */}
+      {/* Premium Hero Section - 360 Viewer Foundation */}
       <section 
         className="relative min-h-screen flex items-center justify-center overflow-hidden bg-[#0B0D0F]"
-        onMouseMove={handleMouseMove}
       >
-        {/* Full-bleed Background */}
+        {/* 360 Viewer Container */}
         <div className="absolute inset-0 z-0">
-          <div 
-            className="absolute inset-0 transition-transform duration-1000 ease-out"
-            style={{ 
-              transform: `translate(${mousePosition.x * 0.3}px, ${mousePosition.y * 0.2}px) scale(1.05)` 
-            }}
-          >
-            {/* Premium Villa Image */}
-            <WatermarkedImage
-              src="/images/gallery/3D DIŞ GÖRSEL/sk-villacamera1gece kopyası.jpg"
-              alt="SkLoftLife Premium Villa"
-              fill
-              className="object-cover"
-              priority
-              watermarkClassName="opacity-10"
+          {use360Viewer ? (
+            <Interactive360Viewer 
+              imagePath="/images/gallery/3D DIŞ GÖRSEL/sk-villacamera1gece kopyası.jpg"
+              className="w-full h-full"
             />
-          </div>
-          {/* Luxury Gradient Overlay */}
-          <div className="absolute inset-0 luxury-gradient" />
-        </div>
-
-        {/* Floating Elements */}
-        <div className="absolute inset-0 z-10">
-          <div 
-            className="absolute top-1/4 left-1/4 w-2 h-2 bg-primary/30 rounded-full animate-float"
-            style={{ animationDelay: '0s' }}
-          />
-          <div 
-            className="absolute top-3/4 right-1/4 w-3 h-3 bg-accent/20 rounded-full animate-float"
-            style={{ animationDelay: '2s' }}
-          />
-          <div 
-            className="absolute top-1/2 left-3/4 w-1 h-1 bg-primary/40 rounded-full animate-float"
-            style={{ animationDelay: '4s' }}
-          />
-        </div>
-
-        {/* Premium Hero Content */}
-        <div 
-          className={`relative z-20 container text-center transition-all duration-1500 ${
-            isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'
-          }`}
-        >
-          <div className="max-w-6xl mx-auto space-y-12">
-            <div className="space-y-8">
-              <h1 className="text-white" style={{ textShadow: '0 1px 12px rgba(0,0,0,.35)' }}>
-                {t('hero.title')}
-              </h1>
-              
-              <p className="text-xl md:text-2xl text-[#9AA0A6] max-w-3xl mx-auto leading-relaxed" style={{ textShadow: '0 1px 8px rgba(0,0,0,.35)' }}>
-                {t('hero.subtitle')}
-              </p>
+          ) : (
+            <div className="w-full h-full bg-[#0B0D0F] flex items-center justify-center">
+              <div className="text-center space-y-4">
+                <div className="w-16 h-16 border-2 border-[#C9A36B] rounded-full animate-spin mx-auto"></div>
+                <p className="text-[#9AA0A6] text-lg">360° Viewer Loading...</p>
+              </div>
             </div>
-
-            <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
-              <Link
-                href="/gallery"
-                className="btn-primary"
-              >
-                {t('hero.cta')}
-              </Link>
-              
-              <Link
-                href="/about"
-                className="btn-secondary"
-              >
-                {t('hero.learnMore')}
-              </Link>
-            </div>
-          </div>
+          )}
         </div>
 
-        {/* Scroll Indicator */}
-        <div 
-          className={`absolute bottom-12 left-1/2 transform -translate-x-1/2 transition-all duration-1000 ${
-            isLoaded ? 'opacity-100' : 'opacity-0'
-          }`}
-        >
-          <div className="flex flex-col items-center gap-4">
-            <div className="w-px h-16 bg-gradient-to-b from-transparent via-[#C9A36B] to-transparent animate-pulse" />
-            <span className="text-sm text-[#9AA0A6] uppercase tracking-wider">{t('hero.scroll')}</span>
-          </div>
+        {/* 360 Controls */}
+        <div className="absolute bottom-12 left-1/2 transform -translate-x-1/2 z-20">
+          <button
+            onClick={() => setUse360Viewer(!use360Viewer)}
+            className="glass-morphism px-6 py-3 rounded-full text-sm font-medium text-[#C9A36B] hover:bg-[#C9A36B]/10 transition-all duration-300"
+          >
+            {use360Viewer ? 'Exit 360°' : 'Enter 360° View'}
+          </button>
         </div>
       </section>
 
       {/* Premium About Section */}
-      <section className="py-32 relative bg-[#0B0D0F]">
+      <section className="py-32 relative stone-texture">
         <div className="absolute inset-0 border-t border-[#1F2733]" />
         <div className="container relative">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
@@ -176,7 +117,7 @@ export default function HomePage() {
       </section>
 
       {/* Premium Featured Projects */}
-      <section className="py-32 relative bg-[#111418]">
+      <section className="py-32 relative architectural-pattern" style={{ backgroundColor: '#111418' }}>
         <div className="container">
           <div className="text-center mb-16 space-y-4">
             <div className="flex items-center justify-center gap-4">
