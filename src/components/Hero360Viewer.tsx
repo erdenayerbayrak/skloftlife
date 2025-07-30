@@ -21,7 +21,7 @@ export function Hero360Viewer({
   const [isDragging, setIsDragging] = useState(false);
   const [lastMouseX, setLastMouseX] = useState(0);
   const containerRef = useRef<HTMLDivElement>(null);
-  const autoRotateRef = useRef<number>();
+  const autoRotateRef = useRef<number | null>(null);
 
   // Auto rotation effect
   useEffect(() => {
@@ -32,12 +32,14 @@ export function Hero360Viewer({
     } else {
       if (autoRotateRef.current) {
         clearInterval(autoRotateRef.current);
+        autoRotateRef.current = null;
       }
     }
 
     return () => {
       if (autoRotateRef.current) {
         clearInterval(autoRotateRef.current);
+        autoRotateRef.current = null;
       }
     };
   }, [autoRotate, isDragging, enabled]);
