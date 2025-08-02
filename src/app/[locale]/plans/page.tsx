@@ -1,7 +1,10 @@
 'use client';
 
+import { useState } from 'react';
 import { useTranslations } from 'next-intl';
 import { WatermarkedImage } from '@/components/ui/WatermarkedImage';
+import { PlanViewerModal } from '@/components/ui/PlanViewerModal';
+import { Eye } from 'lucide-react';
 
 const planCategories = [
   {
@@ -30,16 +33,10 @@ const planCategories = [
 
 export default function PlansPage() {
   const t = useTranslations('plans');
+  const [selectedPlan, setSelectedPlan] = useState<{ name: string; image: string } | null>(null);
 
-  const handleDownloadPlan = (planFile: string, planName: string) => {
-    // Create a temporary link element to trigger download
-    const link = document.createElement('a');
-    link.href = planFile;
-    link.download = `${planName}.pdf`;
-    link.target = '_blank';
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
+  const handleViewPlan = (planName: string, planImage: string) => {
+    setSelectedPlan({ name: planName, image: planImage });
   };
 
   return (
@@ -115,42 +112,24 @@ export default function PlansPage() {
                         watermarkClassName="opacity-40"
                       />
                       
-                      {/* Hover Overlay with Controls */}
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-black/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                        {/* Plan Name and Actions */}
+                      {/* Hover Overlay with View Button */}
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                        {/* Plan Name and View Action */}
                         <div className="absolute bottom-0 left-0 right-0 p-4 text-white">
                           <h3 className="text-lg font-bold mb-3 text-center">
                             {plan.name}
                           </h3>
                           
-                          <div className="flex gap-2">
-                            <button
-                              onClick={(e) => {
-                                e.stopPropagation();
-                                window.open(plan.file, '_blank');
-                              }}
-                              className="flex-1 px-3 py-2 bg-white/30 backdrop-blur rounded-lg text-sm font-medium transition-all duration-300 hover:bg-white/40 flex items-center justify-center gap-1"
-                            >
-                              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
-                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
-                              </svg>
-{t('view')}
-                            </button>
-                            
-                            <button
-                              onClick={(e) => {
-                                e.stopPropagation();
-                                handleDownloadPlan(plan.file, plan.name);
-                              }}
-                              className="flex-1 px-3 py-2 bg-primary/90 backdrop-blur rounded-lg text-sm font-medium transition-all duration-300 hover:bg-primary flex items-center justify-center gap-1"
-                            >
-                              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 10v6m0 0l-3-3m3 3l3-3" />
-                              </svg>
-{t('download')}
-                            </button>
-                          </div>
+                          <button
+                            onClick={(e) => {
+                              e.stopPropagation();
+                              handleViewPlan(plan.name, plan.thumbnail);
+                            }}
+                            className="w-full px-4 py-3 bg-primary/90 backdrop-blur rounded-lg text-sm font-medium transition-all duration-300 hover:bg-primary flex items-center justify-center gap-2"
+                          >
+                            <Eye className="w-5 h-5" />
+                            {t('view')}
+                          </button>
                         </div>
                       </div>
     
@@ -163,6 +142,17 @@ export default function PlansPage() {
           </div>
         </div>
       </div>
+
+      {/* Plan Viewer Modal */}
+      {selectedPlan && (
+        <PlanViewerModal
+          isOpen={!!selectedPlan}
+          onClose={() => setSelectedPlan(null)}
+          planName={selectedPlan.name}
+          planImage={selectedPlan.image}
+        />
+      )}
+
       <style jsx>{`
         @keyframes fadeIn {
           from {

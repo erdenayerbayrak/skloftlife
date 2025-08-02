@@ -161,7 +161,7 @@ export default function GalleryPage() {
               className="group relative aspect-square rounded-xl overflow-hidden cursor-pointer shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:scale-[1.02]"
               onClick={() => setSelectedImage(image.id)}
               style={{
-                animation: `fadeIn 0.8s cubic-bezier(0.4, 0, 0.2, 1) ${index * 0.05}s both`
+                animation: `fadeIn 0.8s cubic-bezier(0.4, 0, 0.2, 1) ${index * 0.03}s both`
               }}
             >
               <WatermarkedImage
@@ -170,8 +170,8 @@ export default function GalleryPage() {
                 fill
                 className="object-cover transition-transform duration-700 group-hover:scale-110"
                 sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, (max-width: 1280px) 33vw, 25vw"
-                priority={index < 8} // Load first 8 images immediately
-                quality={75} // Reduce quality for faster loading
+                priority={index < 4} // Load first 4 images immediately
+                quality={60} // Optimized quality for faster loading
                 watermarkClassName="opacity-30"
               />
               

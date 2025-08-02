@@ -23,12 +23,12 @@ export function Hero360Viewer({
   const containerRef = useRef<HTMLDivElement>(null);
   const autoRotateRef = useRef<number | null>(null);
 
-  // Auto rotation effect
+  // Auto rotation effect - optimized for performance
   useEffect(() => {
     if (autoRotate && !isDragging && enabled) {
       autoRotateRef.current = window.setInterval(() => {
-        setRotation(prev => (prev + 0.5) % 360);
-      }, 50);
+        setRotation(prev => (prev + 0.3) % 360);
+      }, 100); // Reduced frequency from 50ms to 100ms
     } else {
       if (autoRotateRef.current) {
         clearInterval(autoRotateRef.current);

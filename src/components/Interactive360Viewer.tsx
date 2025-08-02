@@ -50,12 +50,12 @@ export function Interactive360Viewer({ imagePath, className = '' }: Interactive3
             enableZoom={true}
             enablePan={false}
             enableDamping={true}
-            dampingFactor={0.05}
-            rotateSpeed={0.5}
+            dampingFactor={0.1}
+            rotateSpeed={0.3}
             minDistance={1}
             maxDistance={100}
-            autoRotate={true}
-            autoRotateSpeed={0.5}
+            autoRotate={false}
+            autoRotateSpeed={0.2}
           />
         </Suspense>
       </Canvas>

@@ -178,9 +178,10 @@
     user-select: none;
   }
 
-  /* Smooth 360 transitions */
+  /* Smooth 360 transitions - Optimized */
   .hero-360-smooth {
-    transition: transform 0.1s ease-out;
+    transition: transform 0.15s ease-out;
+    will-change: transform;
   }
 }
 
@@ -212,9 +213,9 @@
     @apply bg-foreground text-background translate-y-[-1px];
   }
   
-  /* Premium Glass Morphism */
+  /* Premium Glass Morphism - Optimized */
   .glass-morphism {
-    @apply backdrop-blur-[12px] border shadow-xl;
+    @apply backdrop-blur-sm border shadow-lg;
     background: rgba(255, 255, 255, 0.04);
     border-color: rgba(255, 255, 255, 0.1);
   }
@@ -231,8 +232,9 @@
   }
   
   .luxury-card:hover {
-    @apply -translate-y-[2px] scale-[1.01];
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+    @apply -translate-y-[2px];
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.08);
+    will-change: transform;
   }
   
   .dark .luxury-card {
